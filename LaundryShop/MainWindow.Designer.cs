@@ -54,8 +54,15 @@
             this.ServiceComboBox = new System.Windows.Forms.ComboBox();
             this.ServiceLabel = new System.Windows.Forms.Label();
             this.ConfirmPage = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.ConfirmTotalCostLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.CancelOrderButton = new System.Windows.Forms.Button();
             this.EditOrderButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.ForwardOrderButton = new System.Windows.Forms.Button();
+            this.BackwardOrderButton = new System.Windows.Forms.Button();
+            this.OrderListTabControl = new System.Windows.Forms.TabControl();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.ConfirmCancelButton = new System.Windows.Forms.Button();
             this.ConfirmNextButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -84,13 +91,6 @@
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.OrderListTabControl = new System.Windows.Forms.TabControl();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.ConfirmTotalCostLabel = new System.Windows.Forms.Label();
-            this.CancelOrderButton = new System.Windows.Forms.Button();
-            this.BackwardOrderButton = new System.Windows.Forms.Button();
-            this.ForwardOrderButton = new System.Windows.Forms.Button();
             this.MainTabControl.SuspendLayout();
             this.OrderPage.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -99,13 +99,13 @@
             this.panel1.SuspendLayout();
             this.ServicePanel.SuspendLayout();
             this.ConfirmPage.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.ExistingUserPanel.SuspendLayout();
             this.NewUserPanel.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainTabControl
@@ -121,6 +121,7 @@
             this.MainTabControl.Size = new System.Drawing.Size(634, 452);
             this.MainTabControl.TabIndex = 0;
             this.MainTabControl.TabStop = false;
+            this.MainTabControl.SelectedIndexChanged += new System.EventHandler(this.MainTabControl_SelectedIndexChanged);
             // 
             // OrderPage
             // 
@@ -412,6 +413,95 @@
             this.ConfirmPage.Text = "2. Confirm Order";
             this.ConfirmPage.UseVisualStyleBackColor = true;
             // 
+            // ConfirmTotalCostLabel
+            // 
+            this.ConfirmTotalCostLabel.AutoSize = true;
+            this.ConfirmTotalCostLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmTotalCostLabel.Location = new System.Drawing.Point(422, 341);
+            this.ConfirmTotalCostLabel.Name = "ConfirmTotalCostLabel";
+            this.ConfirmTotalCostLabel.Size = new System.Drawing.Size(199, 23);
+            this.ConfirmTotalCostLabel.TabIndex = 9;
+            this.ConfirmTotalCostLabel.Text = "Total Cost: 210 Php";
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Controls.Add(this.CancelOrderButton, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.EditOrderButton, 1, 0);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(20, 293);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(590, 41);
+            this.tableLayoutPanel7.TabIndex = 8;
+            // 
+            // CancelOrderButton
+            // 
+            this.CancelOrderButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.CancelOrderButton.Location = new System.Drawing.Point(110, 3);
+            this.CancelOrderButton.Name = "CancelOrderButton";
+            this.CancelOrderButton.Size = new System.Drawing.Size(75, 23);
+            this.CancelOrderButton.TabIndex = 3;
+            this.CancelOrderButton.Text = "Cancel Order";
+            this.CancelOrderButton.UseVisualStyleBackColor = true;
+            // 
+            // EditOrderButton
+            // 
+            this.EditOrderButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.EditOrderButton.Location = new System.Drawing.Point(405, 3);
+            this.EditOrderButton.Name = "EditOrderButton";
+            this.EditOrderButton.Size = new System.Drawing.Size(75, 23);
+            this.EditOrderButton.TabIndex = 2;
+            this.EditOrderButton.Text = "Edit Order";
+            this.EditOrderButton.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.ForwardOrderButton, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.BackwardOrderButton, 0, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(215, 340);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(200, 41);
+            this.tableLayoutPanel6.TabIndex = 6;
+            // 
+            // ForwardOrderButton
+            // 
+            this.ForwardOrderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ForwardOrderButton.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForwardOrderButton.Location = new System.Drawing.Point(103, 3);
+            this.ForwardOrderButton.Name = "ForwardOrderButton";
+            this.ForwardOrderButton.Size = new System.Drawing.Size(94, 35);
+            this.ForwardOrderButton.TabIndex = 1;
+            this.ForwardOrderButton.Text = "Next Order";
+            this.ForwardOrderButton.UseVisualStyleBackColor = true;
+            this.ForwardOrderButton.Click += new System.EventHandler(this.ForwardOrderButton_Click);
+            // 
+            // BackwardOrderButton
+            // 
+            this.BackwardOrderButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackwardOrderButton.Location = new System.Drawing.Point(3, 3);
+            this.BackwardOrderButton.Name = "BackwardOrderButton";
+            this.BackwardOrderButton.Size = new System.Drawing.Size(94, 35);
+            this.BackwardOrderButton.TabIndex = 0;
+            this.BackwardOrderButton.Text = "Previous Order";
+            this.BackwardOrderButton.UseVisualStyleBackColor = true;
+            this.BackwardOrderButton.Click += new System.EventHandler(this.BackwardOrderButton_Click);
+            // 
+            // OrderListTabControl
+            // 
+            this.OrderListTabControl.Location = new System.Drawing.Point(13, 40);
+            this.OrderListTabControl.Name = "OrderListTabControl";
+            this.OrderListTabControl.SelectedIndex = 0;
+            this.OrderListTabControl.Size = new System.Drawing.Size(604, 250);
+            this.OrderListTabControl.TabIndex = 5;
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 3;
@@ -426,16 +516,6 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(612, 34);
             this.tableLayoutPanel4.TabIndex = 4;
-            // 
-            // EditOrderButton
-            // 
-            this.EditOrderButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.EditOrderButton.Location = new System.Drawing.Point(405, 3);
-            this.EditOrderButton.Name = "EditOrderButton";
-            this.EditOrderButton.Size = new System.Drawing.Size(75, 23);
-            this.EditOrderButton.TabIndex = 2;
-            this.EditOrderButton.Text = "Edit Order";
-            this.EditOrderButton.UseVisualStyleBackColor = true;
             // 
             // ConfirmCancelButton
             // 
@@ -457,6 +537,7 @@
             this.ConfirmNextButton.TabIndex = 1;
             this.ConfirmNextButton.Text = "Next >>";
             this.ConfirmNextButton.UseVisualStyleBackColor = true;
+            this.ConfirmNextButton.Click += new System.EventHandler(this.ConfirmNextButton_Click);
             // 
             // label6
             // 
@@ -718,83 +799,6 @@
             this.label22.TabIndex = 2;
             this.label22.Text = "Nope.";
             // 
-            // OrderListTabControl
-            // 
-            this.OrderListTabControl.Location = new System.Drawing.Point(13, 40);
-            this.OrderListTabControl.Name = "OrderListTabControl";
-            this.OrderListTabControl.SelectedIndex = 0;
-            this.OrderListTabControl.Size = new System.Drawing.Size(604, 250);
-            this.OrderListTabControl.TabIndex = 5;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.ForwardOrderButton, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.BackwardOrderButton, 0, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(215, 340);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(200, 41);
-            this.tableLayoutPanel6.TabIndex = 6;
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Controls.Add(this.CancelOrderButton, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.EditOrderButton, 1, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(20, 293);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(590, 41);
-            this.tableLayoutPanel7.TabIndex = 8;
-            // 
-            // ConfirmTotalCostLabel
-            // 
-            this.ConfirmTotalCostLabel.AutoSize = true;
-            this.ConfirmTotalCostLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmTotalCostLabel.Location = new System.Drawing.Point(422, 341);
-            this.ConfirmTotalCostLabel.Name = "ConfirmTotalCostLabel";
-            this.ConfirmTotalCostLabel.Size = new System.Drawing.Size(199, 23);
-            this.ConfirmTotalCostLabel.TabIndex = 9;
-            this.ConfirmTotalCostLabel.Text = "Total Cost: 210 Php";
-            // 
-            // CancelOrderButton
-            // 
-            this.CancelOrderButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.CancelOrderButton.Location = new System.Drawing.Point(110, 3);
-            this.CancelOrderButton.Name = "CancelOrderButton";
-            this.CancelOrderButton.Size = new System.Drawing.Size(75, 23);
-            this.CancelOrderButton.TabIndex = 3;
-            this.CancelOrderButton.Text = "Cancel Order";
-            this.CancelOrderButton.UseVisualStyleBackColor = true;
-            // 
-            // BackwardOrderButton
-            // 
-            this.BackwardOrderButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackwardOrderButton.Location = new System.Drawing.Point(3, 3);
-            this.BackwardOrderButton.Name = "BackwardOrderButton";
-            this.BackwardOrderButton.Size = new System.Drawing.Size(94, 35);
-            this.BackwardOrderButton.TabIndex = 0;
-            this.BackwardOrderButton.Text = "Previous Order";
-            this.BackwardOrderButton.UseVisualStyleBackColor = true;
-            // 
-            // ForwardOrderButton
-            // 
-            this.ForwardOrderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ForwardOrderButton.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForwardOrderButton.Location = new System.Drawing.Point(103, 3);
-            this.ForwardOrderButton.Name = "ForwardOrderButton";
-            this.ForwardOrderButton.Size = new System.Drawing.Size(94, 35);
-            this.ForwardOrderButton.TabIndex = 1;
-            this.ForwardOrderButton.Text = "Next Order";
-            this.ForwardOrderButton.UseVisualStyleBackColor = true;
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -818,6 +822,8 @@
             this.ServicePanel.PerformLayout();
             this.ConfirmPage.ResumeLayout(false);
             this.ConfirmPage.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -827,8 +833,6 @@
             this.ExistingUserPanel.PerformLayout();
             this.NewUserPanel.ResumeLayout(false);
             this.NewUserPanel.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
