@@ -6,7 +6,7 @@ using System.Text;
 namespace LaundryShop.Models
 {
     public class Order
-    {
+    {   // check if Order should be unified for all uses (i.e. for all instances this model will be used)
         //orderID does not identify the order in the Order Database. 
         private ushort orderID;
 

@@ -34,7 +34,7 @@ namespace LaundryShop
             //Add error checking (i.e. at least one order has been added).
             
             MainTabControl.SelectedIndex = 1;
-            currentPage = 1;
+            currentPage = 2;
         }
 
         private void MakeAddButton_Click(object sender, EventArgs e)
@@ -45,15 +45,15 @@ namespace LaundryShop
             
             OrderTabPage temp = new OrderTabPage("Order # "+(++orderCount).ToString());
             OrderListTabControl.Controls.Add(temp);
-            
-            //clear fields
+
+            ResetOrderFields();
         }
 
         private void ConfirmNextButton_Click(object sender, EventArgs e)
         {
             //Move to Log-in tab.
             MainTabControl.SelectedIndex = 2;
-            currentPage = 2; 
+            currentPage = 3; 
         }
 
         private void ForwardOrderButton_Click(object sender, EventArgs e)
@@ -71,7 +71,27 @@ namespace LaundryShop
         private void MainTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             //restrict changing of pages using the tab control's tab pane.
-            MainTabControl.SelectedIndex = currentPage;
+            //MainTabControl.SelectedIndex = currentPage;
+        }
+
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            //reset fields for a particular order
+            ResetOrderFields();
+        }
+
+        private void CancelOrderButton_Click(object sender, EventArgs e)
+        {   // removes the order being reviewed from the order list. 
+            OrderListTabControl.Controls.Remove(OrderListTabControl.SelectedTab);
+        }
+
+        private void ResetOrderFields()
+        {
+            NoClothesTextBox.Text = "";
+            WeightTextBox.Text = "";
+            ServiceComboBox.SelectedIndex = 0;
+            DueDateCalendar.SetDate(DateTime.Today);
+            ItemizeCheckBox.Checked = false; 
         }
     }
 }
