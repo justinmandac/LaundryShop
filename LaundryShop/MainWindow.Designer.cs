@@ -33,15 +33,14 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.ResetButton = new System.Windows.Forms.Button();
             this.MakeNextButton = new System.Windows.Forms.Button();
-            this.MakeAddButton = new System.Windows.Forms.Button();
             this.OrderLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.DueDateCalendar = new System.Windows.Forms.MonthCalendar();
             this.DueDateLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.TotalCostLabel = new System.Windows.Forms.Label();
-            this.CostHeadingLabel = new System.Windows.Forms.Label();
+            this.ItemizeButton = new System.Windows.Forms.Button();
+            this.MakeAddButton = new System.Windows.Forms.Button();
             this.WeightTextBox = new System.Windows.Forms.TextBox();
             this.NoClothesTextBox = new System.Windows.Forms.TextBox();
             this.ItemizeCheckBox = new System.Windows.Forms.CheckBox();
@@ -91,7 +90,6 @@
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.MainTabControl.SuspendLayout();
             this.OrderPage.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -175,18 +173,6 @@
             this.MakeNextButton.UseVisualStyleBackColor = true;
             this.MakeNextButton.Click += new System.EventHandler(this.MakeNextButton_Click);
             // 
-            // MakeAddButton
-            // 
-            this.MakeAddButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.MakeAddButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MakeAddButton.Location = new System.Drawing.Point(3, 283);
-            this.MakeAddButton.Name = "MakeAddButton";
-            this.MakeAddButton.Size = new System.Drawing.Size(183, 48);
-            this.MakeAddButton.TabIndex = 2;
-            this.MakeAddButton.Text = "Add Order";
-            this.MakeAddButton.UseVisualStyleBackColor = true;
-            this.MakeAddButton.Click += new System.EventHandler(this.MakeAddButton_Click);
-            // 
             // OrderLabel
             // 
             this.OrderLabel.AutoSize = true;
@@ -217,7 +203,7 @@
             // 
             this.panel2.Controls.Add(this.DueDateCalendar);
             this.panel2.Controls.Add(this.DueDateLabel);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Location = new System.Drawing.Point(209, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 334);
             this.panel2.TabIndex = 3;
@@ -244,9 +230,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.TotalCostLabel);
-            this.panel1.Controls.Add(this.CostHeadingLabel);
+            this.panel1.Controls.Add(this.ItemizeButton);
             this.panel1.Controls.Add(this.MakeAddButton);
             this.panel1.Controls.Add(this.WeightTextBox);
             this.panel1.Controls.Add(this.NoClothesTextBox);
@@ -259,25 +243,26 @@
             this.panel1.Size = new System.Drawing.Size(189, 334);
             this.panel1.TabIndex = 2;
             // 
-            // TotalCostLabel
+            // ItemizeButton
             // 
-            this.TotalCostLabel.AutoSize = true;
-            this.TotalCostLabel.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalCostLabel.Location = new System.Drawing.Point(5, 230);
-            this.TotalCostLabel.Name = "TotalCostLabel";
-            this.TotalCostLabel.Size = new System.Drawing.Size(134, 35);
-            this.TotalCostLabel.TabIndex = 17;
-            this.TotalCostLabel.Text = "210 Php";
+            this.ItemizeButton.Location = new System.Drawing.Point(75, 152);
+            this.ItemizeButton.Name = "ItemizeButton";
+            this.ItemizeButton.Size = new System.Drawing.Size(111, 23);
+            this.ItemizeButton.TabIndex = 18;
+            this.ItemizeButton.Text = "Items";
+            this.ItemizeButton.UseVisualStyleBackColor = true;
             // 
-            // CostHeadingLabel
+            // MakeAddButton
             // 
-            this.CostHeadingLabel.AutoSize = true;
-            this.CostHeadingLabel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CostHeadingLabel.Location = new System.Drawing.Point(6, 205);
-            this.CostHeadingLabel.Name = "CostHeadingLabel";
-            this.CostHeadingLabel.Size = new System.Drawing.Size(59, 25);
-            this.CostHeadingLabel.TabIndex = 16;
-            this.CostHeadingLabel.Text = "Cost:";
+            this.MakeAddButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.MakeAddButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MakeAddButton.Location = new System.Drawing.Point(3, 283);
+            this.MakeAddButton.Name = "MakeAddButton";
+            this.MakeAddButton.Size = new System.Drawing.Size(183, 48);
+            this.MakeAddButton.TabIndex = 2;
+            this.MakeAddButton.Text = "Add Order";
+            this.MakeAddButton.UseVisualStyleBackColor = true;
+            this.MakeAddButton.Click += new System.EventHandler(this.MakeAddButton_Click);
             // 
             // WeightTextBox
             // 
@@ -342,7 +327,7 @@
             this.ServicePanel.Controls.Add(this.ServiceDescriptionTextBox);
             this.ServicePanel.Controls.Add(this.ServiceComboBox);
             this.ServicePanel.Controls.Add(this.ServiceLabel);
-            this.ServicePanel.Location = new System.Drawing.Point(209, 3);
+            this.ServicePanel.Location = new System.Drawing.Point(3, 3);
             this.ServicePanel.Name = "ServicePanel";
             this.ServicePanel.Size = new System.Drawing.Size(200, 334);
             this.ServicePanel.TabIndex = 1;
@@ -804,15 +789,6 @@
             this.label22.TabIndex = 2;
             this.label22.Text = "Nope.";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(75, 152);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Items";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -866,8 +842,6 @@
         private System.Windows.Forms.TextBox ServiceDescriptionTextBox;
         private System.Windows.Forms.ComboBox ServiceComboBox;
         private System.Windows.Forms.Label ServiceLabel;
-        private System.Windows.Forms.Label TotalCostLabel;
-        private System.Windows.Forms.Label CostHeadingLabel;
         private System.Windows.Forms.TextBox WeightTextBox;
         private System.Windows.Forms.TextBox NoClothesTextBox;
         private System.Windows.Forms.CheckBox ItemizeCheckBox;
@@ -916,7 +890,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.MonthCalendar DueDateCalendar;
         private System.Windows.Forms.Label DueDateLabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ItemizeButton;
     }
 }
 
