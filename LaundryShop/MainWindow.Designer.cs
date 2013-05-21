@@ -245,6 +245,7 @@
             // 
             // ItemizeButton
             // 
+            this.ItemizeButton.Enabled = false;
             this.ItemizeButton.Location = new System.Drawing.Point(75, 152);
             this.ItemizeButton.Name = "ItemizeButton";
             this.ItemizeButton.Size = new System.Drawing.Size(111, 23);
@@ -291,6 +292,7 @@
             this.ItemizeCheckBox.TabIndex = 13;
             this.ItemizeCheckBox.Text = "Itemize";
             this.ItemizeCheckBox.UseVisualStyleBackColor = true;
+            this.ItemizeCheckBox.CheckedChanged += new System.EventHandler(this.ItemizeCheckBox_CheckedChanged);
             // 
             // TotalWeightLabel
             // 

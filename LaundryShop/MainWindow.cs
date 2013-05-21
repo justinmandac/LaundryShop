@@ -93,5 +93,17 @@ namespace LaundryShop
             DueDateCalendar.SetDate(DateTime.Today);
             ItemizeCheckBox.Checked = false; 
         }
+
+        private void ItemizeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ItemizeCheckBox.Checked)
+            {
+                ItemizeButton.Enabled = true;
+            }
+            else
+            {
+                ItemizeButton.Enabled = false;
+            }
+        }
     }
 }
