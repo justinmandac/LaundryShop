@@ -252,6 +252,7 @@
             this.ItemizeButton.TabIndex = 18;
             this.ItemizeButton.Text = "Items";
             this.ItemizeButton.UseVisualStyleBackColor = true;
+            this.ItemizeButton.Click += new System.EventHandler(this.ItemizeButton_Click);
             // 
             // MakeAddButton
             // 

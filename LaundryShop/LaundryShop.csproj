@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\ItemizationWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\ItemizationWindow.Designer.cs">
+      <DependentUpon>ItemizationWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\OrderDisplayPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -65,6 +71,9 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Components\ItemizationWindow.resx">
+      <DependentUpon>ItemizationWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\OrderDisplayPanel.resx">
       <DependentUpon>OrderDisplayPanel.cs</DependentUpon>
     </EmbeddedResource>

@@ -105,5 +105,12 @@ namespace LaundryShop
                 ItemizeButton.Enabled = false;
             }
         }
+
+        private void ItemizeButton_Click(object sender, EventArgs e)
+        {
+            ushort quant = ushort.Parse(this.NoClothesTextBox.Text);
+            ItemizationWindow temp = new ItemizationWindow(quant);
+            temp.ShowDialog();
+        }
     }
 }
