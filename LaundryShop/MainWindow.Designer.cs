@@ -36,9 +36,13 @@
             this.OrderLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.DueDateCalendar = new System.Windows.Forms.MonthCalendar();
-            this.DueDateLabel = new System.Windows.Forms.Label();
+            this.ServiceListBox = new System.Windows.Forms.ListBox();
+            this.DescriptionLabel = new System.Windows.Forms.Label();
+            this.ServiceLabel = new System.Windows.Forms.Label();
+            this.ServiceDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DueDateLabel = new System.Windows.Forms.Label();
+            this.DueDateCalendar = new System.Windows.Forms.MonthCalendar();
             this.ItemizeButton = new System.Windows.Forms.Button();
             this.MakeAddButton = new System.Windows.Forms.Button();
             this.WeightTextBox = new System.Windows.Forms.TextBox();
@@ -48,10 +52,9 @@
             this.NoClothesLabel = new System.Windows.Forms.Label();
             this.DetailsLabel = new System.Windows.Forms.Label();
             this.ServicePanel = new System.Windows.Forms.Panel();
-            this.DescriptionLabel = new System.Windows.Forms.Label();
-            this.ServiceDescriptionTextBox = new System.Windows.Forms.TextBox();
-            this.ServiceComboBox = new System.Windows.Forms.ComboBox();
-            this.ServiceLabel = new System.Windows.Forms.Label();
+            this.CarpetButton = new System.Windows.Forms.Button();
+            this.DryCleanButton = new System.Windows.Forms.Button();
+            this.LaundryButton = new System.Windows.Forms.Button();
             this.ConfirmPage = new System.Windows.Forms.TabPage();
             this.ConfirmTotalCostLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
@@ -65,7 +68,7 @@
             this.ConfirmCancelButton = new System.Windows.Forms.Button();
             this.ConfirmNextButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.LogInPage = new System.Windows.Forms.TabPage();
             this.label18 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label19 = new System.Windows.Forms.Label();
@@ -90,6 +93,8 @@
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.MainTabControl.SuspendLayout();
             this.OrderPage.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -101,10 +106,11 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.LogInPage.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.ExistingUserPanel.SuspendLayout();
             this.NewUserPanel.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainTabControl
@@ -113,27 +119,28 @@
             this.MainTabControl.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.MainTabControl.Controls.Add(this.OrderPage);
             this.MainTabControl.Controls.Add(this.ConfirmPage);
+            this.MainTabControl.Controls.Add(this.LogInPage);
             this.MainTabControl.Controls.Add(this.tabPage1);
             this.MainTabControl.Location = new System.Drawing.Point(-1, 4);
             this.MainTabControl.Name = "MainTabControl";
             this.MainTabControl.SelectedIndex = 0;
-            this.MainTabControl.Size = new System.Drawing.Size(634, 452);
+            this.MainTabControl.Size = new System.Drawing.Size(634, 573);
             this.MainTabControl.TabIndex = 0;
             this.MainTabControl.TabStop = false;
             this.MainTabControl.SelectedIndexChanged += new System.EventHandler(this.MainTabControl_SelectedIndexChanged);
             // 
             // OrderPage
             // 
+            this.OrderPage.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.OrderPage.Controls.Add(this.tableLayoutPanel3);
             this.OrderPage.Controls.Add(this.OrderLabel);
             this.OrderPage.Controls.Add(this.tableLayoutPanel1);
             this.OrderPage.Location = new System.Drawing.Point(4, 25);
             this.OrderPage.Name = "OrderPage";
             this.OrderPage.Padding = new System.Windows.Forms.Padding(3);
-            this.OrderPage.Size = new System.Drawing.Size(626, 423);
+            this.OrderPage.Size = new System.Drawing.Size(626, 544);
             this.OrderPage.TabIndex = 0;
             this.OrderPage.Text = "1.Make an Order";
-            this.OrderPage.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
             // 
@@ -143,7 +150,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190F));
             this.tableLayoutPanel3.Controls.Add(this.ResetButton, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.MakeNextButton, 2, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(8, 389);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(8, 506);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -196,40 +203,67 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(612, 343);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(612, 461);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.DueDateCalendar);
-            this.panel2.Controls.Add(this.DueDateLabel);
-            this.panel2.Location = new System.Drawing.Point(209, 3);
+            this.panel2.Controls.Add(this.ServiceListBox);
+            this.panel2.Controls.Add(this.DescriptionLabel);
+            this.panel2.Controls.Add(this.ServiceLabel);
+            this.panel2.Controls.Add(this.ServiceDescriptionTextBox);
+            this.panel2.Location = new System.Drawing.Point(142, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 334);
+            this.panel2.Size = new System.Drawing.Size(226, 446);
             this.panel2.TabIndex = 3;
             // 
-            // DueDateCalendar
+            // ServiceListBox
             // 
-            this.DueDateCalendar.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.DueDateCalendar.Location = new System.Drawing.Point(8, 86);
-            this.DueDateCalendar.MaxSelectionCount = 1;
-            this.DueDateCalendar.Name = "DueDateCalendar";
-            this.DueDateCalendar.TabIndex = 1;
-            this.DueDateCalendar.TitleBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.DueDateCalendar.TrailingForeColor = System.Drawing.Color.Maroon;
+            this.ServiceListBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceListBox.FormattingEnabled = true;
+            this.ServiceListBox.ItemHeight = 19;
+            this.ServiceListBox.Location = new System.Drawing.Point(17, 47);
+            this.ServiceListBox.Name = "ServiceListBox";
+            this.ServiceListBox.Size = new System.Drawing.Size(189, 118);
+            this.ServiceListBox.TabIndex = 4;
+            this.ServiceListBox.SelectedValueChanged += new System.EventHandler(this.ServiceListBox_SelectedValueChanged);
             // 
-            // DueDateLabel
+            // DescriptionLabel
             // 
-            this.DueDateLabel.AutoSize = true;
-            this.DueDateLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DueDateLabel.Location = new System.Drawing.Point(3, 0);
-            this.DueDateLabel.Name = "DueDateLabel";
-            this.DueDateLabel.Size = new System.Drawing.Size(123, 29);
-            this.DueDateLabel.TabIndex = 0;
-            this.DueDateLabel.Text = "Due Date";
+            this.DescriptionLabel.AutoSize = true;
+            this.DescriptionLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescriptionLabel.Location = new System.Drawing.Point(3, 217);
+            this.DescriptionLabel.Name = "DescriptionLabel";
+            this.DescriptionLabel.Size = new System.Drawing.Size(71, 13);
+            this.DescriptionLabel.TabIndex = 3;
+            this.DescriptionLabel.Text = "Description";
+            // 
+            // ServiceLabel
+            // 
+            this.ServiceLabel.AutoSize = true;
+            this.ServiceLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceLabel.Location = new System.Drawing.Point(30, 9);
+            this.ServiceLabel.Name = "ServiceLabel";
+            this.ServiceLabel.Size = new System.Drawing.Size(165, 29);
+            this.ServiceLabel.TabIndex = 0;
+            this.ServiceLabel.Text = "Service Type";
+            // 
+            // ServiceDescriptionTextBox
+            // 
+            this.ServiceDescriptionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ServiceDescriptionTextBox.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServiceDescriptionTextBox.Location = new System.Drawing.Point(6, 233);
+            this.ServiceDescriptionTextBox.Multiline = true;
+            this.ServiceDescriptionTextBox.Name = "ServiceDescriptionTextBox";
+            this.ServiceDescriptionTextBox.ReadOnly = true;
+            this.ServiceDescriptionTextBox.Size = new System.Drawing.Size(215, 190);
+            this.ServiceDescriptionTextBox.TabIndex = 2;
+            this.ServiceDescriptionTextBox.Text = "Description for each service goes here.";
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.DueDateLabel);
+            this.panel1.Controls.Add(this.DueDateCalendar);
             this.panel1.Controls.Add(this.ItemizeButton);
             this.panel1.Controls.Add(this.MakeAddButton);
             this.panel1.Controls.Add(this.WeightTextBox);
@@ -238,15 +272,36 @@
             this.panel1.Controls.Add(this.TotalWeightLabel);
             this.panel1.Controls.Add(this.NoClothesLabel);
             this.panel1.Controls.Add(this.DetailsLabel);
-            this.panel1.Location = new System.Drawing.Point(415, 3);
+            this.panel1.Location = new System.Drawing.Point(374, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(189, 334);
+            this.panel1.Size = new System.Drawing.Size(235, 446);
             this.panel1.TabIndex = 2;
+            // 
+            // DueDateLabel
+            // 
+            this.DueDateLabel.AutoSize = true;
+            this.DueDateLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DueDateLabel.Location = new System.Drawing.Point(63, 9);
+            this.DueDateLabel.Name = "DueDateLabel";
+            this.DueDateLabel.Size = new System.Drawing.Size(123, 29);
+            this.DueDateLabel.TabIndex = 0;
+            this.DueDateLabel.Text = "Due Date";
+            // 
+            // DueDateCalendar
+            // 
+            this.DueDateCalendar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DueDateCalendar.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.DueDateCalendar.Location = new System.Drawing.Point(38, 47);
+            this.DueDateCalendar.MaxSelectionCount = 1;
+            this.DueDateCalendar.Name = "DueDateCalendar";
+            this.DueDateCalendar.TabIndex = 1;
+            this.DueDateCalendar.TitleBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.DueDateCalendar.TrailingForeColor = System.Drawing.Color.Maroon;
             // 
             // ItemizeButton
             // 
             this.ItemizeButton.Enabled = false;
-            this.ItemizeButton.Location = new System.Drawing.Point(75, 152);
+            this.ItemizeButton.Location = new System.Drawing.Point(75, 342);
             this.ItemizeButton.Name = "ItemizeButton";
             this.ItemizeButton.Size = new System.Drawing.Size(111, 23);
             this.ItemizeButton.TabIndex = 18;
@@ -258,7 +313,7 @@
             // 
             this.MakeAddButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.MakeAddButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MakeAddButton.Location = new System.Drawing.Point(3, 283);
+            this.MakeAddButton.Location = new System.Drawing.Point(26, 395);
             this.MakeAddButton.Name = "MakeAddButton";
             this.MakeAddButton.Size = new System.Drawing.Size(183, 48);
             this.MakeAddButton.TabIndex = 2;
@@ -269,7 +324,7 @@
             // WeightTextBox
             // 
             this.WeightTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.WeightTextBox.Location = new System.Drawing.Point(75, 122);
+            this.WeightTextBox.Location = new System.Drawing.Point(75, 312);
             this.WeightTextBox.Name = "WeightTextBox";
             this.WeightTextBox.Size = new System.Drawing.Size(112, 21);
             this.WeightTextBox.TabIndex = 15;
@@ -277,7 +332,7 @@
             // NoClothesTextBox
             // 
             this.NoClothesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NoClothesTextBox.Location = new System.Drawing.Point(75, 83);
+            this.NoClothesTextBox.Location = new System.Drawing.Point(75, 273);
             this.NoClothesTextBox.Name = "NoClothesTextBox";
             this.NoClothesTextBox.Size = new System.Drawing.Size(112, 21);
             this.NoClothesTextBox.TabIndex = 14;
@@ -287,7 +342,7 @@
             this.ItemizeCheckBox.AutoSize = true;
             this.ItemizeCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ItemizeCheckBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemizeCheckBox.Location = new System.Drawing.Point(6, 154);
+            this.ItemizeCheckBox.Location = new System.Drawing.Point(6, 344);
             this.ItemizeCheckBox.Name = "ItemizeCheckBox";
             this.ItemizeCheckBox.Size = new System.Drawing.Size(64, 18);
             this.ItemizeCheckBox.TabIndex = 13;
@@ -298,7 +353,7 @@
             // TotalWeightLabel
             // 
             this.TotalWeightLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalWeightLabel.Location = new System.Drawing.Point(5, 117);
+            this.TotalWeightLabel.Location = new System.Drawing.Point(5, 307);
             this.TotalWeightLabel.Name = "TotalWeightLabel";
             this.TotalWeightLabel.Size = new System.Drawing.Size(64, 30);
             this.TotalWeightLabel.TabIndex = 12;
@@ -308,7 +363,7 @@
             // 
             this.NoClothesLabel.AutoSize = true;
             this.NoClothesLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoClothesLabel.Location = new System.Drawing.Point(3, 86);
+            this.NoClothesLabel.Location = new System.Drawing.Point(3, 276);
             this.NoClothesLabel.Name = "NoClothesLabel";
             this.NoClothesLabel.Size = new System.Drawing.Size(67, 13);
             this.NoClothesLabel.TabIndex = 11;
@@ -318,7 +373,7 @@
             // 
             this.DetailsLabel.AutoSize = true;
             this.DetailsLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetailsLabel.Location = new System.Drawing.Point(3, 0);
+            this.DetailsLabel.Location = new System.Drawing.Point(63, 221);
             this.DetailsLabel.Name = "DetailsLabel";
             this.DetailsLabel.Size = new System.Drawing.Size(95, 29);
             this.DetailsLabel.TabIndex = 0;
@@ -326,68 +381,46 @@
             // 
             // ServicePanel
             // 
-            this.ServicePanel.Controls.Add(this.DescriptionLabel);
-            this.ServicePanel.Controls.Add(this.ServiceDescriptionTextBox);
-            this.ServicePanel.Controls.Add(this.ServiceComboBox);
-            this.ServicePanel.Controls.Add(this.ServiceLabel);
+            this.ServicePanel.Controls.Add(this.CarpetButton);
+            this.ServicePanel.Controls.Add(this.DryCleanButton);
+            this.ServicePanel.Controls.Add(this.LaundryButton);
             this.ServicePanel.Location = new System.Drawing.Point(3, 3);
             this.ServicePanel.Name = "ServicePanel";
-            this.ServicePanel.Size = new System.Drawing.Size(200, 334);
+            this.ServicePanel.Size = new System.Drawing.Size(133, 446);
             this.ServicePanel.TabIndex = 1;
             // 
-            // DescriptionLabel
+            // CarpetButton
             // 
-            this.DescriptionLabel.AutoSize = true;
-            this.DescriptionLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescriptionLabel.Location = new System.Drawing.Point(5, 125);
-            this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(71, 13);
-            this.DescriptionLabel.TabIndex = 3;
-            this.DescriptionLabel.Text = "Description";
+            this.CarpetButton.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CarpetButton.Location = new System.Drawing.Point(13, 312);
+            this.CarpetButton.Name = "CarpetButton";
+            this.CarpetButton.Size = new System.Drawing.Size(97, 88);
+            this.CarpetButton.TabIndex = 2;
+            this.CarpetButton.Text = "Carpet Cleaning";
+            this.CarpetButton.UseVisualStyleBackColor = true;
+            this.CarpetButton.Click += new System.EventHandler(this.CarpetButton_Click);
             // 
-            // ServiceDescriptionTextBox
+            // DryCleanButton
             // 
-            this.ServiceDescriptionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ServiceDescriptionTextBox.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceDescriptionTextBox.Location = new System.Drawing.Point(8, 141);
-            this.ServiceDescriptionTextBox.Multiline = true;
-            this.ServiceDescriptionTextBox.Name = "ServiceDescriptionTextBox";
-            this.ServiceDescriptionTextBox.ReadOnly = true;
-            this.ServiceDescriptionTextBox.Size = new System.Drawing.Size(189, 190);
-            this.ServiceDescriptionTextBox.TabIndex = 2;
-            this.ServiceDescriptionTextBox.Text = "Description for each service goes here.";
+            this.DryCleanButton.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DryCleanButton.Location = new System.Drawing.Point(13, 179);
+            this.DryCleanButton.Name = "DryCleanButton";
+            this.DryCleanButton.Size = new System.Drawing.Size(97, 88);
+            this.DryCleanButton.TabIndex = 1;
+            this.DryCleanButton.Text = "Dry Cleaning";
+            this.DryCleanButton.UseVisualStyleBackColor = true;
+            this.DryCleanButton.Click += new System.EventHandler(this.DryCleanButton_Click);
             // 
-            // ServiceComboBox
+            // LaundryButton
             // 
-            this.ServiceComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ServiceComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ServiceComboBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceComboBox.Items.AddRange(new object[] {
-            "",
-            "--LAUNDRY--",
-            "*Wash and Fold",
-            "*Wash and Press",
-            "*Press Only",
-            "*Hand Wash",
-            "*Comforter",
-            "--DRY CLEANING--",
-            "*Barong/Coat",
-            "*Gown",
-            "Carpet Cleaning"});
-            this.ServiceComboBox.Location = new System.Drawing.Point(8, 86);
-            this.ServiceComboBox.Name = "ServiceComboBox";
-            this.ServiceComboBox.Size = new System.Drawing.Size(189, 27);
-            this.ServiceComboBox.TabIndex = 1;
-            // 
-            // ServiceLabel
-            // 
-            this.ServiceLabel.AutoSize = true;
-            this.ServiceLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceLabel.Location = new System.Drawing.Point(3, 0);
-            this.ServiceLabel.Name = "ServiceLabel";
-            this.ServiceLabel.Size = new System.Drawing.Size(165, 29);
-            this.ServiceLabel.TabIndex = 0;
-            this.ServiceLabel.Text = "Service Type";
+            this.LaundryButton.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LaundryButton.Location = new System.Drawing.Point(13, 49);
+            this.LaundryButton.Name = "LaundryButton";
+            this.LaundryButton.Size = new System.Drawing.Size(97, 88);
+            this.LaundryButton.TabIndex = 0;
+            this.LaundryButton.Text = "Laundry";
+            this.LaundryButton.UseVisualStyleBackColor = true;
+            this.LaundryButton.Click += new System.EventHandler(this.LaundryButton_Click);
             // 
             // ConfirmPage
             // 
@@ -400,7 +433,7 @@
             this.ConfirmPage.Location = new System.Drawing.Point(4, 25);
             this.ConfirmPage.Name = "ConfirmPage";
             this.ConfirmPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ConfirmPage.Size = new System.Drawing.Size(626, 423);
+            this.ConfirmPage.Size = new System.Drawing.Size(626, 544);
             this.ConfirmPage.TabIndex = 1;
             this.ConfirmPage.Text = "2. Confirm Order";
             this.ConfirmPage.UseVisualStyleBackColor = true;
@@ -542,17 +575,17 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Kindly make sure that your order\'s correct.";
             // 
-            // tabPage1
+            // LogInPage
             // 
-            this.tabPage1.Controls.Add(this.label18);
-            this.tabPage1.Controls.Add(this.tableLayoutPanel5);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(626, 423);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "3. Log-in";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.LogInPage.Controls.Add(this.label18);
+            this.LogInPage.Controls.Add(this.tableLayoutPanel5);
+            this.LogInPage.Location = new System.Drawing.Point(4, 25);
+            this.LogInPage.Name = "LogInPage";
+            this.LogInPage.Padding = new System.Windows.Forms.Padding(3);
+            this.LogInPage.Size = new System.Drawing.Size(626, 544);
+            this.LogInPage.TabIndex = 2;
+            this.LogInPage.Text = "3. Log-in";
+            this.LogInPage.UseVisualStyleBackColor = true;
             // 
             // label18
             // 
@@ -792,11 +825,31 @@
             this.label22.TabIndex = 2;
             this.label22.Text = "Nope.";
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(626, 544);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(61, 58);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 81);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 453);
+            this.ClientSize = new System.Drawing.Size(634, 578);
             this.Controls.Add(this.MainTabControl);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -812,20 +865,20 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ServicePanel.ResumeLayout(false);
-            this.ServicePanel.PerformLayout();
             this.ConfirmPage.ResumeLayout(false);
             this.ConfirmPage.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.LogInPage.ResumeLayout(false);
+            this.LogInPage.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.ExistingUserPanel.ResumeLayout(false);
             this.ExistingUserPanel.PerformLayout();
             this.NewUserPanel.ResumeLayout(false);
             this.NewUserPanel.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -837,13 +890,12 @@
         private System.Windows.Forms.TabPage ConfirmPage;
         private System.Windows.Forms.Label OrderLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage LogInPage;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label DetailsLabel;
         private System.Windows.Forms.Panel ServicePanel;
         private System.Windows.Forms.Label DescriptionLabel;
         private System.Windows.Forms.TextBox ServiceDescriptionTextBox;
-        private System.Windows.Forms.ComboBox ServiceComboBox;
         private System.Windows.Forms.Label ServiceLabel;
         private System.Windows.Forms.TextBox WeightTextBox;
         private System.Windows.Forms.TextBox NoClothesTextBox;
@@ -894,6 +946,12 @@
         private System.Windows.Forms.MonthCalendar DueDateCalendar;
         private System.Windows.Forms.Label DueDateLabel;
         private System.Windows.Forms.Button ItemizeButton;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CarpetButton;
+        private System.Windows.Forms.Button DryCleanButton;
+        private System.Windows.Forms.Button LaundryButton;
+        private System.Windows.Forms.ListBox ServiceListBox;
     }
 }
 

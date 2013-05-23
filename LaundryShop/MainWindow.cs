@@ -18,13 +18,19 @@ namespace LaundryShop
     public partial class MainWindow : Form
     {
         private ushort orderCount;
-        private ushort currentPage; 
+        private ushort currentPage;
+        private ushort serviceID; 
+        private string[] LaundryList = {"Wash and Fold","Wash and Press","Press Only",
+                                       "Handwash","Comforter"};
+        private string[] DryCleanList = { "Barong/Coat","Gown"};
+        
 
         public MainWindow()
         {
             InitializeComponent();
-            orderCount = 0;
-            currentPage = 0; 
+            orderCount  = 0;
+            currentPage = 0;
+            serviceID   = 0;
             
         }
 
@@ -89,9 +95,9 @@ namespace LaundryShop
         {
             NoClothesTextBox.Text = "";
             WeightTextBox.Text = "";
-            ServiceComboBox.SelectedIndex = 0;
             DueDateCalendar.SetDate(DateTime.Today);
-            ItemizeCheckBox.Checked = false; 
+            ItemizeCheckBox.Checked = false;
+            ServiceListBox.Items.Clear();
         }
 
         private void ItemizeCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -111,6 +117,67 @@ namespace LaundryShop
             ushort quant = ushort.Parse(this.NoClothesTextBox.Text);
             ItemizationWindow temp = new ItemizationWindow(quant);
             temp.ShowDialog();
+        }
+
+        private void LaundryButton_Click(object sender, EventArgs e)
+        {
+            serviceID = 0;
+            AddItemsToListBox(LaundryList);
+        }
+
+        private void DryCleanButton_Click(object sender, EventArgs e)
+        {
+            serviceID = 1;
+            AddItemsToListBox(DryCleanList);
+           
+        }
+
+
+        private void CarpetButton_Click(object sender, EventArgs e)
+        {
+            serviceID = 2;
+            ServiceListBox.Items.Clear();
+            //ServiceDescriptionTextBox.Text = "We clean yo carpet.";
+            ServiceDescriptionTextBox.Text = Properties.Resources.CarpetCleanDescription;
+
+        }
+
+        //add items to ListBox
+        private void AddItemsToListBox(string[] arr)
+        {
+            int size = arr.Length;
+
+            ServiceListBox.Items.Clear();
+            for (int x = 0; x < size; x++)
+            {
+                ServiceListBox.Items.Add(arr[x]);
+            }
+        }
+
+
+        private void ServiceListBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string tmp = "";
+            switch (serviceID)
+            {
+                case 0:
+                    switch (ServiceListBox.SelectedIndex)
+                    {
+                        case 0:
+                            tmp = Properties.Resources.WashFoldDescription;
+                            break;
+                        case 1: break;
+                        case 2: break;
+                        case 3: break;
+                        case 4: break;
+                    }
+                    break;
+                case 1: break;
+             
+                
+
+            }
+            ServiceDescriptionTextBox.Text = tmp;
         }
     }
 }
