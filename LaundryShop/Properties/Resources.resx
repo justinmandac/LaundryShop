@@ -123,11 +123,20 @@
   <data name="Comforter" xml:space="preserve">
     <value>What.</value>
   </data>
+  <data name="ConfirmHeaderText" xml:space="preserve">
+    <value>Kindly check your order(s).</value>
+  </data>
   <data name="HandWashDescription" xml:space="preserve">
     <value>Wanna do things the old fashioned way? We can do that for you.</value>
   </data>
+  <data name="LogInHeaderText" xml:space="preserve">
+    <value>Have you been here before?</value>
+  </data>
+  <data name="OrderHeaderText" xml:space="preserve">
+    <value>Hi! What can we do for you?</value>
+  </data>
   <data name="PressDescription" xml:space="preserve">
-    <value>We may not lift, but we press. Huzzah!</value>
+    <value>We may not lift, but we press.Hard. Huzzah!</value>
   </data>
   <data name="WashFoldDescription" xml:space="preserve">
     <value>We wash your clothes, then fold them. Ha!</value>

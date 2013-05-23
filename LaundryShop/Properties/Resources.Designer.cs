@@ -79,6 +79,15 @@ namespace LaundryShop.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kindly check your order(s)..
+        /// </summary>
+        internal static string ConfirmHeaderText {
+            get {
+                return ResourceManager.GetString("ConfirmHeaderText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wanna do things the old fashioned way? We can do that for you..
         /// </summary>
         internal static string HandWashDescription {
@@ -88,7 +97,25 @@ namespace LaundryShop.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to We may not lift, but we press. Huzzah!.
+        ///   Looks up a localized string similar to Have you been here before?.
+        /// </summary>
+        internal static string LogInHeaderText {
+            get {
+                return ResourceManager.GetString("LogInHeaderText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hi! What can we do for you?.
+        /// </summary>
+        internal static string OrderHeaderText {
+            get {
+                return ResourceManager.GetString("OrderHeaderText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We may not lift, but we press.Hard. Huzzah!.
         /// </summary>
         internal static string PressDescription {
             get {
