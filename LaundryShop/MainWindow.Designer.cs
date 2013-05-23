@@ -33,6 +33,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.ResetButton = new System.Windows.Forms.Button();
             this.MakeNextButton = new System.Windows.Forms.Button();
+            this.AddOrderLabel = new System.Windows.Forms.Label();
             this.OrderHeaderText = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -72,19 +73,15 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label19 = new System.Windows.Forms.Label();
             this.ExistingUserPanel = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.NewUserPanel = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.AddOrderLabel = new System.Windows.Forms.Label();
-            this.LogInNoButton = new System.Windows.Forms.Button();
-            this.LogInYesButton = new System.Windows.Forms.Button();
             this.LogInDetailsPanel = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.LogInYesButton = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.NewUserPanel = new System.Windows.Forms.Panel();
             this.SignUpDetailsPanel = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -96,6 +93,9 @@
             this.AddressLabel = new System.Windows.Forms.Label();
             this.SurnameLabel = new System.Windows.Forms.Label();
             this.FirstNameLabel = new System.Windows.Forms.Label();
+            this.LogInNoButton = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.MainTabControl.SuspendLayout();
             this.OrderPage.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -110,8 +110,8 @@
             this.LogInPage.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.ExistingUserPanel.SuspendLayout();
-            this.NewUserPanel.SuspendLayout();
             this.LogInDetailsPanel.SuspendLayout();
+            this.NewUserPanel.SuspendLayout();
             this.SignUpDetailsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -183,15 +183,26 @@
             this.MakeNextButton.UseVisualStyleBackColor = true;
             this.MakeNextButton.Click += new System.EventHandler(this.MakeNextButton_Click);
             // 
+            // AddOrderLabel
+            // 
+            this.AddOrderLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.AddOrderLabel.AutoSize = true;
+            this.AddOrderLabel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddOrderLabel.Location = new System.Drawing.Point(287, 0);
+            this.AddOrderLabel.Name = "AddOrderLabel";
+            this.AddOrderLabel.Size = new System.Drawing.Size(59, 19);
+            this.AddOrderLabel.TabIndex = 2;
+            this.AddOrderLabel.Text = "label1";
+            // 
             // OrderHeaderText
             // 
             this.OrderHeaderText.AutoSize = true;
             this.OrderHeaderText.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OrderHeaderText.Location = new System.Drawing.Point(8, 7);
             this.OrderHeaderText.Name = "OrderHeaderText";
-            this.OrderHeaderText.Size = new System.Drawing.Size(311, 29);
+            this.OrderHeaderText.Size = new System.Drawing.Size(351, 29);
             this.OrderHeaderText.TabIndex = 1;
-            this.OrderHeaderText.Text = Properties.Resources.OrderHeaderText;
+            this.OrderHeaderText.Text = "Hi! What can we do for you?";
             // 
             // tableLayoutPanel1
             // 
@@ -441,6 +452,7 @@
             this.ConfirmPage.TabIndex = 1;
             this.ConfirmPage.Text = "2. Confirm Order";
             this.ConfirmPage.UseVisualStyleBackColor = true;
+            this.ConfirmPage.Enter += new System.EventHandler(this.ConfirmPage_Enter);
             // 
             // ConfirmTotalCostLabel
             // 
@@ -564,9 +576,9 @@
             this.label6.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(8, 7);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(525, 29);
+            this.label6.Size = new System.Drawing.Size(338, 29);
             this.label6.TabIndex = 2;
-            this.label6.Text = Properties.Resources.ConfirmHeaderText;
+            this.label6.Text = "Kindly check your order(s).";
             // 
             // LogInPage
             // 
@@ -588,7 +600,7 @@
             this.LogInHeaderText.Name = "LogInHeaderText";
             this.LogInHeaderText.Size = new System.Drawing.Size(347, 29);
             this.LogInHeaderText.TabIndex = 2;
-            this.LogInHeaderText.Text = Properties.Resources.LogInHeaderText;
+            this.LogInHeaderText.Text = "Have you been here before?";
             // 
             // tableLayoutPanel5
             // 
@@ -627,77 +639,6 @@
             this.ExistingUserPanel.Name = "ExistingUserPanel";
             this.ExistingUserPanel.Size = new System.Drawing.Size(202, 370);
             this.ExistingUserPanel.TabIndex = 1;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(4, 40);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(96, 13);
-            this.label21.TabIndex = 1;
-            this.label21.Text = "Please log-in here.";
-            // 
-            // NewUserPanel
-            // 
-            this.NewUserPanel.Controls.Add(this.SignUpDetailsPanel);
-            this.NewUserPanel.Controls.Add(this.LogInNoButton);
-            this.NewUserPanel.Controls.Add(this.label23);
-            this.NewUserPanel.Location = new System.Drawing.Point(409, 3);
-            this.NewUserPanel.Name = "NewUserPanel";
-            this.NewUserPanel.Size = new System.Drawing.Size(200, 370);
-            this.NewUserPanel.TabIndex = 2;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(3, 40);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(168, 13);
-            this.label23.TabIndex = 2;
-            this.label23.Text = "Fill up the form below to proceed.";
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(626, 544);
-            this.tabPage1.TabIndex = 3;
-            this.tabPage1.Text = "4. Print Receipt";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // AddOrderLabel
-            // 
-            this.AddOrderLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.AddOrderLabel.AutoSize = true;
-            this.AddOrderLabel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddOrderLabel.Location = new System.Drawing.Point(287, 0);
-            this.AddOrderLabel.Name = "AddOrderLabel";
-            this.AddOrderLabel.Size = new System.Drawing.Size(59, 19);
-            this.AddOrderLabel.TabIndex = 2;
-            this.AddOrderLabel.Text = "label1";
-            // 
-            // LogInNoButton
-            // 
-            this.LogInNoButton.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogInNoButton.Location = new System.Drawing.Point(3, 1);
-            this.LogInNoButton.Name = "LogInNoButton";
-            this.LogInNoButton.Size = new System.Drawing.Size(75, 36);
-            this.LogInNoButton.TabIndex = 23;
-            this.LogInNoButton.Text = "Nope.";
-            this.LogInNoButton.UseVisualStyleBackColor = true;
-            this.LogInNoButton.Click += new System.EventHandler(this.LogInNoButton_Click);
-            // 
-            // LogInYesButton
-            // 
-            this.LogInYesButton.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogInYesButton.Location = new System.Drawing.Point(3, 1);
-            this.LogInYesButton.Name = "LogInYesButton";
-            this.LogInYesButton.Size = new System.Drawing.Size(75, 36);
-            this.LogInYesButton.TabIndex = 23;
-            this.LogInYesButton.Text = "Yes!";
-            this.LogInYesButton.UseVisualStyleBackColor = true;
-            this.LogInYesButton.Click += new System.EventHandler(this.LogInYesButton_Click);
             // 
             // LogInDetailsPanel
             // 
@@ -754,6 +695,36 @@
             this.label24.Size = new System.Drawing.Size(52, 13);
             this.label24.TabIndex = 22;
             this.label24.Text = "Mobile #:";
+            // 
+            // LogInYesButton
+            // 
+            this.LogInYesButton.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogInYesButton.Location = new System.Drawing.Point(3, 1);
+            this.LogInYesButton.Name = "LogInYesButton";
+            this.LogInYesButton.Size = new System.Drawing.Size(75, 36);
+            this.LogInYesButton.TabIndex = 23;
+            this.LogInYesButton.Text = "Yes!";
+            this.LogInYesButton.UseVisualStyleBackColor = true;
+            this.LogInYesButton.Click += new System.EventHandler(this.LogInYesButton_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(4, 40);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(96, 13);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Please log-in here.";
+            // 
+            // NewUserPanel
+            // 
+            this.NewUserPanel.Controls.Add(this.SignUpDetailsPanel);
+            this.NewUserPanel.Controls.Add(this.LogInNoButton);
+            this.NewUserPanel.Controls.Add(this.label23);
+            this.NewUserPanel.Location = new System.Drawing.Point(409, 3);
+            this.NewUserPanel.Name = "NewUserPanel";
+            this.NewUserPanel.Size = new System.Drawing.Size(200, 370);
+            this.NewUserPanel.TabIndex = 2;
             // 
             // SignUpDetailsPanel
             // 
@@ -859,6 +830,36 @@
             this.FirstNameLabel.TabIndex = 20;
             this.FirstNameLabel.Text = "First Name:";
             // 
+            // LogInNoButton
+            // 
+            this.LogInNoButton.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogInNoButton.Location = new System.Drawing.Point(3, 1);
+            this.LogInNoButton.Name = "LogInNoButton";
+            this.LogInNoButton.Size = new System.Drawing.Size(75, 36);
+            this.LogInNoButton.TabIndex = 23;
+            this.LogInNoButton.Text = "Nope.";
+            this.LogInNoButton.UseVisualStyleBackColor = true;
+            this.LogInNoButton.Click += new System.EventHandler(this.LogInNoButton_Click);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(3, 40);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(168, 13);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "Fill up the form below to proceed.";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(626, 544);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "4. Print Receipt";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -891,10 +892,10 @@
             this.tableLayoutPanel5.PerformLayout();
             this.ExistingUserPanel.ResumeLayout(false);
             this.ExistingUserPanel.PerformLayout();
-            this.NewUserPanel.ResumeLayout(false);
-            this.NewUserPanel.PerformLayout();
             this.LogInDetailsPanel.ResumeLayout(false);
             this.LogInDetailsPanel.PerformLayout();
+            this.NewUserPanel.ResumeLayout(false);
+            this.NewUserPanel.PerformLayout();
             this.SignUpDetailsPanel.ResumeLayout(false);
             this.SignUpDetailsPanel.PerformLayout();
             this.ResumeLayout(false);

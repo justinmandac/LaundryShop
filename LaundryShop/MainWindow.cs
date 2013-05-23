@@ -23,10 +23,12 @@ namespace LaundryShop
         private string[] LaundryList = {"Wash and Fold","Wash and Press","Press Only",
                                        "Handwash","Comforter"};
         private string[] DryCleanList = { "Barong/Coat","Gown"};
+        /*
+         * OrderList will be used to hold the FINAL orders (i.e. to be submitted to the database)
+         * Will be populated by retrieving the Order objects in each tab page in OrderListTabControl.
+         */
         private LinkedList<Order> OrderList;
-        private DateTime currentDate;
-        
-
+       
         public MainWindow()
         {
             InitializeComponent();
@@ -35,27 +37,42 @@ namespace LaundryShop
             serviceID   = 0;
             AddOrderLabel.Text = "";
             OrderList = new LinkedList<Order>();
-            currentDate = DateTime.Today;
-                        
-            
+     
         }
 
         private void MakeNextButton_Click(object sender, EventArgs e)
         {
             //Move selected tab to the next.
-            //Add error checking (i.e. at least one order has been added).
-            
-            MainTabControl.SelectedIndex = 1;
-            currentPage = 2;
+
+            if (OrderListTabControl.TabCount > 0) //At least one order must be added to proceed to the next page.
+            {
+                MainTabControl.SelectedIndex = 1;
+                currentPage = 2;
+            }
+            else
+            {
+                AddOrderLabel.Text = "Place an order first.";
+            }
         }
 
         private void MakeAddButton_Click(object sender, EventArgs e)
         {
-            //Add order to a queue. 
-            //Add error checking for fields.
+            
+            Order _ord = new Order();
+            _ord.OrderID = ++orderCount;
+            _ord.ServiceType = ServiceListBox.SelectedItem.ToString();
+            _ord.OrderDate = DateTime.Today;
+            _ord.DueDate = DueDateCalendar.SelectionStart;
+            _ord.NoClothes = ushort.Parse(NoClothesTextBox.Text); //error checking
+            _ord.Weight = float.Parse(WeightTextBox.Text); // error checking
+            _ord.Itemized = ItemizeCheckBox.Checked;
+            _ord.Amount = 100; // temporary value
+
+
             //initialize a new tab page for the order tab control.
             
-            OrderTabPage temp = new OrderTabPage("Order # "+(++orderCount).ToString());
+            OrderTabPage temp = new OrderTabPage("Order # "+_ord.OrderID.ToString(), _ord);
+            
             OrderListTabControl.Controls.Add(temp);
             AddOrderLabel.Text = "Order Added to list!";
 
@@ -149,8 +166,7 @@ namespace LaundryShop
             AddItemsToListBox(DryCleanList);
            
         }
-
-
+        //Carpet cleaning service is selected.
         private void CarpetButton_Click(object sender, EventArgs e)
         {
             serviceID = 2;
@@ -228,6 +244,20 @@ namespace LaundryShop
         {
             SignUpDetailsPanel.Enabled = true;
             LogInDetailsPanel.Enabled  = false;
+        }
+
+        private void ConfirmPage_Enter(object sender, EventArgs e)
+        {
+            //Compute total cost when page gains focus. 
+            float totalCost = 0;
+
+            for (int x = 0; x < OrderListTabControl.TabPages.Count; x++)
+            {
+                totalCost+= OrderListTabControl.TabPages.Cast<OrderTabPage>().ElementAt(x).Amount();
+                
+            }
+
+            ConfirmTotalCostLabel.Text = "Total Cost: " + totalCost.ToString() + " Php";
         }
     }
 }
