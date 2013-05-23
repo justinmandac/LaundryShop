@@ -59,5 +59,31 @@ namespace LaundryShop.Models
             get { return serviceType; }
             set { serviceType = value; }
         }
+
+        private bool itemized;
+
+        public bool Itemized
+        {
+            get { return itemized; }
+            set { itemized = value; }
+        }
+
+        private LinkedList<Item> list;
+
+        public LinkedList<Item> List
+        {
+            get { return list; }
+  
+        }
+
+        public Order()
+        {
+            list = new LinkedList<Item>();
+        }
+
+        public void AddItemtoList(Item item)
+        {
+            list.AddLast(item);
+        }
     }
 }
