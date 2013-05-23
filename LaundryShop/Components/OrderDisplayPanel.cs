@@ -12,23 +12,26 @@ namespace LaundryShop.Components
 {
     public partial class OrderDisplayPanel : UserControl
     {
-        private Order Order; 
         public OrderDisplayPanel()
         {
             InitializeComponent();
             
         }
         public OrderDisplayPanel(Order order)
-        {
-            Order = order;
+        {          
+        
             InitializeComponent();
+
             //initialize UI components according to Order model.
+            this.SelectedServiceLabel.Text = order.ServiceType;
+            this.SelectedDueDateLabel.Text = order.DueDate.ToShortDateString();
+            this.InputNoClothesLabel.Text = order.NoClothes.ToString();
+            this.InputWeightLabel.Text = order.Weight.ToString();
+            this.InputItemizationCheckBox.Checked = order.Itemized;
+            this.OrderCostLabel.Text = order.Amount.ToString();
         }
 
-        public ushort getID()
-        {
-            return Order.OrderID;
-        }
+
 
 
     }
