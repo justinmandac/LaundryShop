@@ -238,12 +238,16 @@ namespace LaundryShop
         {
             LogInDetailsPanel.Enabled = true;
             SignUpDetailsPanel.Enabled = false;
+            ExistingUserPanel.BackColor = System.Drawing.Color.DarkGray;
+            NewUserPanel.BackColor = Control.DefaultBackColor;
         }
 
         private void LogInNoButton_Click(object sender, EventArgs e)
         {
             SignUpDetailsPanel.Enabled = true;
             LogInDetailsPanel.Enabled  = false;
+            ExistingUserPanel.BackColor = Control.DefaultBackColor;
+            NewUserPanel.BackColor = System.Drawing.Color.DarkGray;
         }
 
         private void ConfirmPage_Enter(object sender, EventArgs e)

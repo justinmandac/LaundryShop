@@ -655,12 +655,13 @@
             // 
             // button8
             // 
+            this.button8.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button8.Location = new System.Drawing.Point(5, 109);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(149, 45);
             this.button8.TabIndex = 24;
             this.button8.Text = "Submit";
-            this.button8.UseVisualStyleBackColor = true;
+            this.button8.UseVisualStyleBackColor = false;
             // 
             // textBox6
             // 
@@ -698,13 +699,14 @@
             // 
             // LogInYesButton
             // 
+            this.LogInYesButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.LogInYesButton.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogInYesButton.Location = new System.Drawing.Point(3, 1);
             this.LogInYesButton.Name = "LogInYesButton";
             this.LogInYesButton.Size = new System.Drawing.Size(75, 36);
             this.LogInYesButton.TabIndex = 23;
             this.LogInYesButton.Text = "Yes!";
-            this.LogInYesButton.UseVisualStyleBackColor = true;
+            this.LogInYesButton.UseVisualStyleBackColor = false;
             this.LogInYesButton.Click += new System.EventHandler(this.LogInYesButton_Click);
             // 
             // label21
@@ -746,21 +748,23 @@
             // 
             // button6
             // 
+            this.button6.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button6.Location = new System.Drawing.Point(6, 255);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(149, 23);
             this.button6.TabIndex = 29;
             this.button6.Text = "Cancel";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseVisualStyleBackColor = false;
             // 
             // button7
             // 
+            this.button7.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button7.Location = new System.Drawing.Point(6, 177);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(149, 45);
             this.button7.TabIndex = 28;
             this.button7.Text = "Submit";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button7.UseVisualStyleBackColor = false;
             // 
             // textBox4
             // 
@@ -832,13 +836,14 @@
             // 
             // LogInNoButton
             // 
+            this.LogInNoButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.LogInNoButton.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogInNoButton.Location = new System.Drawing.Point(3, 1);
             this.LogInNoButton.Name = "LogInNoButton";
             this.LogInNoButton.Size = new System.Drawing.Size(75, 36);
             this.LogInNoButton.TabIndex = 23;
             this.LogInNoButton.Text = "Nope.";
-            this.LogInNoButton.UseVisualStyleBackColor = true;
+            this.LogInNoButton.UseVisualStyleBackColor = false;
             this.LogInNoButton.Click += new System.EventHandler(this.LogInNoButton_Click);
             // 
             // label23
