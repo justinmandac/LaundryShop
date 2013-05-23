@@ -120,7 +120,19 @@
   <data name="CarpetCleanDescription" xml:space="preserve">
     <value>We clean your carpets!</value>
   </data>
+  <data name="Comforter" xml:space="preserve">
+    <value>What.</value>
+  </data>
+  <data name="HandWashDescription" xml:space="preserve">
+    <value>Wanna do things the old fashioned way? We can do that for you.</value>
+  </data>
+  <data name="PressDescription" xml:space="preserve">
+    <value>We may not lift, but we press. Huzzah!</value>
+  </data>
   <data name="WashFoldDescription" xml:space="preserve">
     <value>We wash your clothes, then fold them. Ha!</value>
+  </data>
+  <data name="WashPressDescription" xml:space="preserve">
+    <value>We wash your clothes, then press them. Beat that!</value>
   </data>
 </root>

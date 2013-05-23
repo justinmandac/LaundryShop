@@ -59,7 +59,6 @@
             this.ConfirmTotalCostLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.CancelOrderButton = new System.Windows.Forms.Button();
-            this.EditOrderButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.ForwardOrderButton = new System.Windows.Forms.Button();
             this.BackwardOrderButton = new System.Windows.Forms.Button();
@@ -94,7 +93,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AddOrderLabel = new System.Windows.Forms.Label();
             this.MainTabControl.SuspendLayout();
             this.OrderPage.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -110,7 +109,6 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.ExistingUserPanel.SuspendLayout();
             this.NewUserPanel.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainTabControl
@@ -150,6 +148,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190F));
             this.tableLayoutPanel3.Controls.Add(this.ResetButton, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.MakeNextButton, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.AddOrderLabel, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(8, 506);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -222,9 +221,9 @@
             this.ServiceListBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ServiceListBox.FormattingEnabled = true;
             this.ServiceListBox.ItemHeight = 19;
-            this.ServiceListBox.Location = new System.Drawing.Point(17, 47);
+            this.ServiceListBox.Location = new System.Drawing.Point(6, 47);
             this.ServiceListBox.Name = "ServiceListBox";
-            this.ServiceListBox.Size = new System.Drawing.Size(189, 118);
+            this.ServiceListBox.Size = new System.Drawing.Size(215, 156);
             this.ServiceListBox.TabIndex = 4;
             this.ServiceListBox.SelectedValueChanged += new System.EventHandler(this.ServiceListBox_SelectedValueChanged);
             // 
@@ -242,7 +241,7 @@
             // 
             this.ServiceLabel.AutoSize = true;
             this.ServiceLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ServiceLabel.Location = new System.Drawing.Point(30, 9);
+            this.ServiceLabel.Location = new System.Drawing.Point(4, 9);
             this.ServiceLabel.Name = "ServiceLabel";
             this.ServiceLabel.Size = new System.Drawing.Size(165, 29);
             this.ServiceLabel.TabIndex = 0;
@@ -256,9 +255,8 @@
             this.ServiceDescriptionTextBox.Multiline = true;
             this.ServiceDescriptionTextBox.Name = "ServiceDescriptionTextBox";
             this.ServiceDescriptionTextBox.ReadOnly = true;
-            this.ServiceDescriptionTextBox.Size = new System.Drawing.Size(215, 190);
+            this.ServiceDescriptionTextBox.Size = new System.Drawing.Size(215, 210);
             this.ServiceDescriptionTextBox.TabIndex = 2;
-            this.ServiceDescriptionTextBox.Text = "Description for each service goes here.";
             // 
             // panel1
             // 
@@ -279,9 +277,11 @@
             // 
             // DueDateLabel
             // 
+            this.DueDateLabel.AutoEllipsis = true;
             this.DueDateLabel.AutoSize = true;
+            this.DueDateLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DueDateLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DueDateLabel.Location = new System.Drawing.Point(63, 9);
+            this.DueDateLabel.Location = new System.Drawing.Point(3, 9);
             this.DueDateLabel.Name = "DueDateLabel";
             this.DueDateLabel.Size = new System.Drawing.Size(123, 29);
             this.DueDateLabel.TabIndex = 0;
@@ -373,7 +373,7 @@
             // 
             this.DetailsLabel.AutoSize = true;
             this.DetailsLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetailsLabel.Location = new System.Drawing.Point(63, 221);
+            this.DetailsLabel.Location = new System.Drawing.Point(3, 224);
             this.DetailsLabel.Name = "DetailsLabel";
             this.DetailsLabel.Size = new System.Drawing.Size(95, 29);
             this.DetailsLabel.TabIndex = 0;
@@ -392,7 +392,7 @@
             // CarpetButton
             // 
             this.CarpetButton.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CarpetButton.Location = new System.Drawing.Point(13, 312);
+            this.CarpetButton.Location = new System.Drawing.Point(13, 355);
             this.CarpetButton.Name = "CarpetButton";
             this.CarpetButton.Size = new System.Drawing.Size(97, 88);
             this.CarpetButton.TabIndex = 2;
@@ -403,7 +403,7 @@
             // DryCleanButton
             // 
             this.DryCleanButton.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DryCleanButton.Location = new System.Drawing.Point(13, 179);
+            this.DryCleanButton.Location = new System.Drawing.Point(13, 206);
             this.DryCleanButton.Name = "DryCleanButton";
             this.DryCleanButton.Size = new System.Drawing.Size(97, 88);
             this.DryCleanButton.TabIndex = 1;
@@ -442,7 +442,7 @@
             // 
             this.ConfirmTotalCostLabel.AutoSize = true;
             this.ConfirmTotalCostLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmTotalCostLabel.Location = new System.Drawing.Point(421, 355);
+            this.ConfirmTotalCostLabel.Location = new System.Drawing.Point(414, 454);
             this.ConfirmTotalCostLabel.Name = "ConfirmTotalCostLabel";
             this.ConfirmTotalCostLabel.Size = new System.Drawing.Size(199, 23);
             this.ConfirmTotalCostLabel.TabIndex = 9;
@@ -454,8 +454,7 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Controls.Add(this.CancelOrderButton, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.EditOrderButton, 1, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(20, 293);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(13, 392);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -473,16 +472,6 @@
             this.CancelOrderButton.UseVisualStyleBackColor = true;
             this.CancelOrderButton.Click += new System.EventHandler(this.CancelOrderButton_Click);
             // 
-            // EditOrderButton
-            // 
-            this.EditOrderButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.EditOrderButton.Location = new System.Drawing.Point(405, 3);
-            this.EditOrderButton.Name = "EditOrderButton";
-            this.EditOrderButton.Size = new System.Drawing.Size(75, 35);
-            this.EditOrderButton.TabIndex = 2;
-            this.EditOrderButton.Text = "Edit Order";
-            this.EditOrderButton.UseVisualStyleBackColor = true;
-            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 2;
@@ -490,7 +479,7 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.ForwardOrderButton, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.BackwardOrderButton, 0, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(215, 340);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(208, 439);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -525,7 +514,7 @@
             this.OrderListTabControl.Location = new System.Drawing.Point(13, 40);
             this.OrderListTabControl.Name = "OrderListTabControl";
             this.OrderListTabControl.SelectedIndex = 0;
-            this.OrderListTabControl.Size = new System.Drawing.Size(604, 250);
+            this.OrderListTabControl.Size = new System.Drawing.Size(604, 346);
             this.OrderListTabControl.TabIndex = 5;
             // 
             // tableLayoutPanel4
@@ -536,7 +525,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
             this.tableLayoutPanel4.Controls.Add(this.ConfirmCancelButton, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.ConfirmNextButton, 2, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(8, 389);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(8, 506);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -669,9 +658,9 @@
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(4, 94);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(57, 13);
+            this.label25.Size = new System.Drawing.Size(53, 13);
             this.label25.TabIndex = 20;
-            this.label25.Text = "Password:";
+            this.label25.Text = "Surname:";
             // 
             // label21
             // 
@@ -687,9 +676,9 @@
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(4, 53);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(59, 13);
+            this.label24.Size = new System.Drawing.Size(52, 13);
             this.label24.TabIndex = 20;
-            this.label24.Text = "Username:";
+            this.label24.Text = "Mobile #:";
             // 
             // label20
             // 
@@ -775,9 +764,9 @@
             this.ContactNoLabel.AutoSize = true;
             this.ContactNoLabel.Location = new System.Drawing.Point(9, 172);
             this.ContactNoLabel.Name = "ContactNoLabel";
-            this.ContactNoLabel.Size = new System.Drawing.Size(86, 13);
+            this.ContactNoLabel.Size = new System.Drawing.Size(52, 13);
             this.ContactNoLabel.TabIndex = 13;
-            this.ContactNoLabel.Text = "Phone/Mobile #:";
+            this.ContactNoLabel.Text = "Mobile #:";
             // 
             // AddressLabel
             // 
@@ -827,23 +816,24 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(626, 544);
             this.tabPage1.TabIndex = 3;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "4. Print Receipt";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // AddOrderLabel
             // 
-            this.button1.Location = new System.Drawing.Point(61, 58);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 81);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AddOrderLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.AddOrderLabel.AutoSize = true;
+            this.AddOrderLabel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddOrderLabel.Location = new System.Drawing.Point(287, 0);
+            this.AddOrderLabel.Name = "AddOrderLabel";
+            this.AddOrderLabel.Size = new System.Drawing.Size(59, 19);
+            this.AddOrderLabel.TabIndex = 2;
+            this.AddOrderLabel.Text = "label1";
             // 
             // MainWindow
             // 
@@ -859,6 +849,7 @@
             this.OrderPage.ResumeLayout(false);
             this.OrderPage.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -878,7 +869,6 @@
             this.ExistingUserPanel.PerformLayout();
             this.NewUserPanel.ResumeLayout(false);
             this.NewUserPanel.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -907,7 +897,6 @@
         private System.Windows.Forms.Button ResetButton;
         private System.Windows.Forms.Button MakeNextButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button EditOrderButton;
         private System.Windows.Forms.Button ConfirmCancelButton;
         private System.Windows.Forms.Button ConfirmNextButton;
         private System.Windows.Forms.Label label18;
@@ -947,11 +936,11 @@
         private System.Windows.Forms.Label DueDateLabel;
         private System.Windows.Forms.Button ItemizeButton;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button CarpetButton;
         private System.Windows.Forms.Button DryCleanButton;
         private System.Windows.Forms.Button LaundryButton;
         private System.Windows.Forms.ListBox ServiceListBox;
+        private System.Windows.Forms.Label AddOrderLabel;
     }
 }
 

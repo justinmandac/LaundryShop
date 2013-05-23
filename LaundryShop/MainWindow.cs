@@ -11,7 +11,7 @@ using LaundryShop.Models;
 /*
    Work to be done:
  *  - Prevent the user from switching views using the tabs on the main tab control.
- *  
+ *  - Add Thank you page.
  */
 namespace LaundryShop
 {
@@ -31,6 +31,7 @@ namespace LaundryShop
             orderCount  = 0;
             currentPage = 0;
             serviceID   = 0;
+            AddOrderLabel.Text = "";
             
         }
 
@@ -51,6 +52,7 @@ namespace LaundryShop
             
             OrderTabPage temp = new OrderTabPage("Order # "+(++orderCount).ToString());
             OrderListTabControl.Controls.Add(temp);
+            AddOrderLabel.Text = "Order Added to list!";
 
             ResetOrderFields();
         }
@@ -114,19 +116,30 @@ namespace LaundryShop
 
         private void ItemizeButton_Click(object sender, EventArgs e)
         {
-            ushort quant = ushort.Parse(this.NoClothesTextBox.Text);
-            ItemizationWindow temp = new ItemizationWindow(quant);
-            temp.ShowDialog();
+            try
+            {
+                ushort quant = ushort.Parse(this.NoClothesTextBox.Text);
+                ItemizationWindow temp = new ItemizationWindow(quant);
+                temp.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+            }
+         
         }
 
+        // Laundry Service is selected.
         private void LaundryButton_Click(object sender, EventArgs e)
         {
             serviceID = 0;
             AddItemsToListBox(LaundryList);
+           
         }
-
+        // Dry Cleaning service is selected.
         private void DryCleanButton_Click(object sender, EventArgs e)
         {
+
             serviceID = 1;
             AddItemsToListBox(DryCleanList);
            
@@ -152,31 +165,52 @@ namespace LaundryShop
             {
                 ServiceListBox.Items.Add(arr[x]);
             }
+            //Clears AddOrder Label if the user has a new order. 
+            AddOrderLabel.Text = "";
         }
 
 
         private void ServiceListBox_SelectedValueChanged(object sender, EventArgs e)
         {
+            //Changes the service type description. Each main category has a service ID which,
+            //for this case, simplifies the process of finding the correct description. 
+            //Only Laundry and Dry-Clean categories are considered as they have sub-categories. 
+ 
             string tmp = "";
             switch (serviceID)
             {
-                case 0:
-                    switch (ServiceListBox.SelectedIndex)
+                case 0: // Laundry
+                    switch (ServiceListBox.SelectedIndex) 
                     {
                         case 0:
                             tmp = Properties.Resources.WashFoldDescription;
                             break;
-                        case 1: break;
-                        case 2: break;
-                        case 3: break;
-                        case 4: break;
+                        case 1:
+                            tmp = Properties.Resources.WashPressDescription;
+                            break;
+                        case 2:
+                            tmp = Properties.Resources.PressDescription;
+                            break;
+                        case 3:
+                            tmp = Properties.Resources.HandWashDescription;
+                            break;
+                        case 4:
+                            tmp = Properties.Resources.Comforter;
+                            break;
                     }
                     break;
-                case 1: break;
+                case 1: // Dry-Clean
+                    switch (ServiceListBox.SelectedIndex)
+                    {
+                        case 0: break;
+                        case 1: break;
+                    }
+                    break;
              
                 
 
             }
+
             ServiceDescriptionTextBox.Text = tmp;
         }
     }

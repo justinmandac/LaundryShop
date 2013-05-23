@@ -70,11 +70,47 @@ namespace LaundryShop.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to What..
+        /// </summary>
+        internal static string Comforter {
+            get {
+                return ResourceManager.GetString("Comforter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wanna do things the old fashioned way? We can do that for you..
+        /// </summary>
+        internal static string HandWashDescription {
+            get {
+                return ResourceManager.GetString("HandWashDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We may not lift, but we press. Huzzah!.
+        /// </summary>
+        internal static string PressDescription {
+            get {
+                return ResourceManager.GetString("PressDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to We wash your clothes, then fold them. Ha!.
         /// </summary>
         internal static string WashFoldDescription {
             get {
                 return ResourceManager.GetString("WashFoldDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We wash your clothes, then press them. Beat that!.
+        /// </summary>
+        internal static string WashPressDescription {
+            get {
+                return ResourceManager.GetString("WashPressDescription", resourceCulture);
             }
         }
     }

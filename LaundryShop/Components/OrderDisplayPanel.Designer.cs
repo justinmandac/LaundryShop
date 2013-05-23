@@ -41,14 +41,17 @@
             this.InputNoClothesLabel = new System.Windows.Forms.Label();
             this.InputWeightLabel = new System.Windows.Forms.Label();
             this.InputItemizationCheckBox = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.OrderPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // OrderPanel
             // 
-            this.OrderPanel.ColumnCount = 2;
+            this.OrderPanel.ColumnCount = 3;
             this.OrderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.24272F));
-            this.OrderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.75728F));
+            this.OrderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
+            this.OrderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 361F));
             this.OrderPanel.Controls.Add(this.OrderCostLabel, 1, 6);
             this.OrderPanel.Controls.Add(this.CostLabel, 0, 6);
             this.OrderPanel.Controls.Add(this.ForItemizationLabel, 0, 5);
@@ -61,6 +64,8 @@
             this.OrderPanel.Controls.Add(this.InputNoClothesLabel, 1, 3);
             this.OrderPanel.Controls.Add(this.InputWeightLabel, 1, 4);
             this.OrderPanel.Controls.Add(this.InputItemizationCheckBox, 1, 5);
+            this.OrderPanel.Controls.Add(this.button1, 2, 2);
+            this.OrderPanel.Controls.Add(this.button2, 2, 5);
             this.OrderPanel.Location = new System.Drawing.Point(3, 3);
             this.OrderPanel.Name = "OrderPanel";
             this.OrderPanel.RowCount = 7;
@@ -71,14 +76,14 @@
             this.OrderPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.OrderPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.OrderPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.OrderPanel.Size = new System.Drawing.Size(590, 212);
+            this.OrderPanel.Size = new System.Drawing.Size(590, 259);
             this.OrderPanel.TabIndex = 5;
             // 
             // OrderCostLabel
             // 
             this.OrderCostLabel.AutoSize = true;
             this.OrderCostLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderCostLabel.Location = new System.Drawing.Point(151, 179);
+            this.OrderCostLabel.Location = new System.Drawing.Point(133, 216);
             this.OrderCostLabel.Name = "OrderCostLabel";
             this.OrderCostLabel.Size = new System.Drawing.Size(54, 16);
             this.OrderCostLabel.TabIndex = 8;
@@ -88,7 +93,7 @@
             // 
             this.CostLabel.AutoSize = true;
             this.CostLabel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CostLabel.Location = new System.Drawing.Point(3, 179);
+            this.CostLabel.Location = new System.Drawing.Point(3, 216);
             this.CostLabel.Name = "CostLabel";
             this.CostLabel.Size = new System.Drawing.Size(46, 18);
             this.CostLabel.TabIndex = 6;
@@ -98,9 +103,9 @@
             // 
             this.ForItemizationLabel.AutoSize = true;
             this.ForItemizationLabel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForItemizationLabel.Location = new System.Drawing.Point(3, 147);
+            this.ForItemizationLabel.Location = new System.Drawing.Point(3, 177);
             this.ForItemizationLabel.Name = "ForItemizationLabel";
-            this.ForItemizationLabel.Size = new System.Drawing.Size(128, 18);
+            this.ForItemizationLabel.Size = new System.Drawing.Size(99, 36);
             this.ForItemizationLabel.TabIndex = 5;
             this.ForItemizationLabel.Text = "For Itemization:";
             // 
@@ -118,7 +123,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 52);
+            this.label8.Location = new System.Drawing.Point(3, 60);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 18);
             this.label8.TabIndex = 2;
@@ -128,7 +133,7 @@
             // 
             this.OrderNoClothesLabel.AutoSize = true;
             this.OrderNoClothesLabel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderNoClothesLabel.Location = new System.Drawing.Point(3, 83);
+            this.OrderNoClothesLabel.Location = new System.Drawing.Point(3, 99);
             this.OrderNoClothesLabel.Name = "OrderNoClothesLabel";
             this.OrderNoClothesLabel.Size = new System.Drawing.Size(104, 18);
             this.OrderNoClothesLabel.TabIndex = 3;
@@ -138,9 +143,9 @@
             // 
             this.OrderWeightLabel.AutoSize = true;
             this.OrderWeightLabel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderWeightLabel.Location = new System.Drawing.Point(3, 115);
+            this.OrderWeightLabel.Location = new System.Drawing.Point(3, 138);
             this.OrderWeightLabel.Name = "OrderWeightLabel";
-            this.OrderWeightLabel.Size = new System.Drawing.Size(107, 32);
+            this.OrderWeightLabel.Size = new System.Drawing.Size(107, 36);
             this.OrderWeightLabel.TabIndex = 4;
             this.OrderWeightLabel.Text = "Total Weight (Kg):";
             // 
@@ -148,7 +153,7 @@
             // 
             this.SelectedServiceLabel.AutoSize = true;
             this.SelectedServiceLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectedServiceLabel.Location = new System.Drawing.Point(151, 20);
+            this.SelectedServiceLabel.Location = new System.Drawing.Point(133, 20);
             this.SelectedServiceLabel.Name = "SelectedServiceLabel";
             this.SelectedServiceLabel.Size = new System.Drawing.Size(93, 16);
             this.SelectedServiceLabel.TabIndex = 7;
@@ -158,7 +163,7 @@
             // 
             this.SelectedDueDateLabel.AutoSize = true;
             this.SelectedDueDateLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectedDueDateLabel.Location = new System.Drawing.Point(151, 52);
+            this.SelectedDueDateLabel.Location = new System.Drawing.Point(133, 60);
             this.SelectedDueDateLabel.Name = "SelectedDueDateLabel";
             this.SelectedDueDateLabel.Size = new System.Drawing.Size(74, 16);
             this.SelectedDueDateLabel.TabIndex = 8;
@@ -168,7 +173,7 @@
             // 
             this.InputNoClothesLabel.AutoSize = true;
             this.InputNoClothesLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputNoClothesLabel.Location = new System.Drawing.Point(151, 83);
+            this.InputNoClothesLabel.Location = new System.Drawing.Point(133, 99);
             this.InputNoClothesLabel.Name = "InputNoClothesLabel";
             this.InputNoClothesLabel.Size = new System.Drawing.Size(22, 16);
             this.InputNoClothesLabel.TabIndex = 9;
@@ -178,7 +183,7 @@
             // 
             this.InputWeightLabel.AutoSize = true;
             this.InputWeightLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputWeightLabel.Location = new System.Drawing.Point(151, 115);
+            this.InputWeightLabel.Location = new System.Drawing.Point(133, 138);
             this.InputWeightLabel.Name = "InputWeightLabel";
             this.InputWeightLabel.Size = new System.Drawing.Size(15, 16);
             this.InputWeightLabel.TabIndex = 10;
@@ -189,11 +194,29 @@
             this.InputItemizationCheckBox.AutoSize = true;
             this.InputItemizationCheckBox.Checked = true;
             this.InputItemizationCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.InputItemizationCheckBox.Location = new System.Drawing.Point(151, 150);
+            this.InputItemizationCheckBox.Location = new System.Drawing.Point(133, 180);
             this.InputItemizationCheckBox.Name = "InputItemizationCheckBox";
             this.InputItemizationCheckBox.Size = new System.Drawing.Size(15, 14);
             this.InputItemizationCheckBox.TabIndex = 11;
             this.InputItemizationCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(232, 63);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Edit";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(232, 180);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "View Items";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // OrderDisplayPanel
             // 
@@ -201,7 +224,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.OrderPanel);
             this.Name = "OrderDisplayPanel";
-            this.Size = new System.Drawing.Size(597, 219);
+            this.Size = new System.Drawing.Size(597, 265);
             this.OrderPanel.ResumeLayout(false);
             this.OrderPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -223,6 +246,8 @@
         private System.Windows.Forms.Label InputNoClothesLabel;
         private System.Windows.Forms.Label InputWeightLabel;
         private System.Windows.Forms.CheckBox InputItemizationCheckBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
 
     }
 }
