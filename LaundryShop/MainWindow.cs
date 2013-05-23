@@ -23,6 +23,8 @@ namespace LaundryShop
         private string[] LaundryList = {"Wash and Fold","Wash and Press","Press Only",
                                        "Handwash","Comforter"};
         private string[] DryCleanList = { "Barong/Coat","Gown"};
+        private LinkedList<Order> OrderList;
+        private DateTime currentDate;
         
 
         public MainWindow()
@@ -32,6 +34,9 @@ namespace LaundryShop
             currentPage = 0;
             serviceID   = 0;
             AddOrderLabel.Text = "";
+            OrderList = new LinkedList<Order>();
+            currentDate = DateTime.Today;
+                        
             
         }
 
@@ -205,13 +210,24 @@ namespace LaundryShop
                         case 0: break;
                         case 1: break;
                     }
-                    break;
-             
+                    break;             
                 
 
             }
-
+            //Update Descriptio Box
             ServiceDescriptionTextBox.Text = tmp;
+        }
+
+        private void LogInYesButton_Click(object sender, EventArgs e)
+        {
+            LogInDetailsPanel.Enabled = true;
+            SignUpDetailsPanel.Enabled = false;
+        }
+
+        private void LogInNoButton_Click(object sender, EventArgs e)
+        {
+            SignUpDetailsPanel.Enabled = true;
+            LogInDetailsPanel.Enabled  = false;
         }
     }
 }

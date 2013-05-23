@@ -33,7 +33,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.ResetButton = new System.Windows.Forms.Button();
             this.MakeNextButton = new System.Windows.Forms.Button();
-            this.OrderLabel = new System.Windows.Forms.Label();
+            this.OrderHeaderText = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ServiceListBox = new System.Windows.Forms.ListBox();
@@ -68,18 +68,24 @@
             this.ConfirmNextButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.LogInPage = new System.Windows.Forms.TabPage();
-            this.label18 = new System.Windows.Forms.Label();
+            this.LogInHeaderText = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label19 = new System.Windows.Forms.Label();
             this.ExistingUserPanel = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.NewUserPanel = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.AddOrderLabel = new System.Windows.Forms.Label();
+            this.LogInNoButton = new System.Windows.Forms.Button();
+            this.LogInYesButton = new System.Windows.Forms.Button();
+            this.LogInDetailsPanel = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.NewUserPanel = new System.Windows.Forms.Panel();
+            this.SignUpDetailsPanel = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -90,10 +96,6 @@
             this.AddressLabel = new System.Windows.Forms.Label();
             this.SurnameLabel = new System.Windows.Forms.Label();
             this.FirstNameLabel = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.AddOrderLabel = new System.Windows.Forms.Label();
             this.MainTabControl.SuspendLayout();
             this.OrderPage.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -109,6 +111,8 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.ExistingUserPanel.SuspendLayout();
             this.NewUserPanel.SuspendLayout();
+            this.LogInDetailsPanel.SuspendLayout();
+            this.SignUpDetailsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainTabControl
@@ -131,7 +135,7 @@
             // 
             this.OrderPage.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.OrderPage.Controls.Add(this.tableLayoutPanel3);
-            this.OrderPage.Controls.Add(this.OrderLabel);
+            this.OrderPage.Controls.Add(this.OrderHeaderText);
             this.OrderPage.Controls.Add(this.tableLayoutPanel1);
             this.OrderPage.Location = new System.Drawing.Point(4, 25);
             this.OrderPage.Name = "OrderPage";
@@ -179,15 +183,15 @@
             this.MakeNextButton.UseVisualStyleBackColor = true;
             this.MakeNextButton.Click += new System.EventHandler(this.MakeNextButton_Click);
             // 
-            // OrderLabel
+            // OrderHeaderText
             // 
-            this.OrderLabel.AutoSize = true;
-            this.OrderLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderLabel.Location = new System.Drawing.Point(8, 7);
-            this.OrderLabel.Name = "OrderLabel";
-            this.OrderLabel.Size = new System.Drawing.Size(311, 29);
-            this.OrderLabel.TabIndex = 1;
-            this.OrderLabel.Text = "What can we do for you?";
+            this.OrderHeaderText.AutoSize = true;
+            this.OrderHeaderText.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrderHeaderText.Location = new System.Drawing.Point(8, 7);
+            this.OrderHeaderText.Name = "OrderHeaderText";
+            this.OrderHeaderText.Size = new System.Drawing.Size(311, 29);
+            this.OrderHeaderText.TabIndex = 1;
+            this.OrderHeaderText.Text = Properties.Resources.OrderHeaderText;
             // 
             // tableLayoutPanel1
             // 
@@ -562,11 +566,11 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(525, 29);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Kindly make sure that your order\'s correct.";
+            this.label6.Text = Properties.Resources.ConfirmHeaderText;
             // 
             // LogInPage
             // 
-            this.LogInPage.Controls.Add(this.label18);
+            this.LogInPage.Controls.Add(this.LogInHeaderText);
             this.LogInPage.Controls.Add(this.tableLayoutPanel5);
             this.LogInPage.Location = new System.Drawing.Point(4, 25);
             this.LogInPage.Name = "LogInPage";
@@ -576,22 +580,22 @@
             this.LogInPage.Text = "3. Log-in";
             this.LogInPage.UseVisualStyleBackColor = true;
             // 
-            // label18
+            // LogInHeaderText
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(8, 7);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(347, 29);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "Have you been here before?";
+            this.LogInHeaderText.AutoSize = true;
+            this.LogInHeaderText.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogInHeaderText.Location = new System.Drawing.Point(8, 7);
+            this.LogInHeaderText.Name = "LogInHeaderText";
+            this.LogInHeaderText.Size = new System.Drawing.Size(347, 29);
+            this.LogInHeaderText.TabIndex = 2;
+            this.LogInHeaderText.Text = Properties.Resources.LogInHeaderText;
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 264F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 198F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 206F));
             this.tableLayoutPanel5.Controls.Add(this.label19, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.ExistingUserPanel, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.NewUserPanel, 2, 0);
@@ -607,7 +611,7 @@
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(249, 172);
+            this.label19.Location = new System.Drawing.Point(278, 172);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(57, 31);
             this.label19.TabIndex = 0;
@@ -616,203 +620,41 @@
             // 
             // ExistingUserPanel
             // 
-            this.ExistingUserPanel.Controls.Add(this.button8);
-            this.ExistingUserPanel.Controls.Add(this.textBox6);
-            this.ExistingUserPanel.Controls.Add(this.textBox5);
-            this.ExistingUserPanel.Controls.Add(this.label25);
+            this.ExistingUserPanel.Controls.Add(this.LogInDetailsPanel);
+            this.ExistingUserPanel.Controls.Add(this.LogInYesButton);
             this.ExistingUserPanel.Controls.Add(this.label21);
-            this.ExistingUserPanel.Controls.Add(this.label24);
-            this.ExistingUserPanel.Controls.Add(this.label20);
             this.ExistingUserPanel.Location = new System.Drawing.Point(3, 3);
             this.ExistingUserPanel.Name = "ExistingUserPanel";
             this.ExistingUserPanel.Size = new System.Drawing.Size(202, 370);
             this.ExistingUserPanel.TabIndex = 1;
             // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(7, 149);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(149, 45);
-            this.button8.TabIndex = 20;
-            this.button8.Text = "Submit";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // textBox6
-            // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(7, 111);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(149, 21);
-            this.textBox6.TabIndex = 21;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(7, 70);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(149, 21);
-            this.textBox5.TabIndex = 21;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(4, 94);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(53, 13);
-            this.label25.TabIndex = 20;
-            this.label25.Text = "Surname:";
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(4, 23);
+            this.label21.Location = new System.Drawing.Point(4, 40);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(96, 13);
             this.label21.TabIndex = 1;
             this.label21.Text = "Please log-in here.";
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(4, 53);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(52, 13);
-            this.label24.TabIndex = 20;
-            this.label24.Text = "Mobile #:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(3, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(51, 23);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Yes!";
-            // 
             // NewUserPanel
             // 
-            this.NewUserPanel.Controls.Add(this.button6);
-            this.NewUserPanel.Controls.Add(this.button7);
-            this.NewUserPanel.Controls.Add(this.textBox4);
-            this.NewUserPanel.Controls.Add(this.textBox3);
-            this.NewUserPanel.Controls.Add(this.textBox2);
-            this.NewUserPanel.Controls.Add(this.textBox1);
-            this.NewUserPanel.Controls.Add(this.ContactNoLabel);
-            this.NewUserPanel.Controls.Add(this.AddressLabel);
-            this.NewUserPanel.Controls.Add(this.SurnameLabel);
-            this.NewUserPanel.Controls.Add(this.FirstNameLabel);
+            this.NewUserPanel.Controls.Add(this.SignUpDetailsPanel);
+            this.NewUserPanel.Controls.Add(this.LogInNoButton);
             this.NewUserPanel.Controls.Add(this.label23);
-            this.NewUserPanel.Controls.Add(this.label22);
-            this.NewUserPanel.Location = new System.Drawing.Point(351, 3);
+            this.NewUserPanel.Location = new System.Drawing.Point(409, 3);
             this.NewUserPanel.Name = "NewUserPanel";
-            this.NewUserPanel.Size = new System.Drawing.Size(258, 370);
+            this.NewUserPanel.Size = new System.Drawing.Size(200, 370);
             this.NewUserPanel.TabIndex = 2;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(12, 332);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(149, 23);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "Cancel";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(12, 233);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(149, 45);
-            this.button7.TabIndex = 18;
-            this.button7.Text = "Submit";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(12, 188);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(149, 21);
-            this.textBox4.TabIndex = 17;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(12, 149);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(149, 21);
-            this.textBox3.TabIndex = 16;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(12, 110);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(149, 21);
-            this.textBox2.TabIndex = 15;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(12, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 21);
-            this.textBox1.TabIndex = 14;
-            // 
-            // ContactNoLabel
-            // 
-            this.ContactNoLabel.AutoSize = true;
-            this.ContactNoLabel.Location = new System.Drawing.Point(9, 172);
-            this.ContactNoLabel.Name = "ContactNoLabel";
-            this.ContactNoLabel.Size = new System.Drawing.Size(52, 13);
-            this.ContactNoLabel.TabIndex = 13;
-            this.ContactNoLabel.Text = "Mobile #:";
-            // 
-            // AddressLabel
-            // 
-            this.AddressLabel.AutoSize = true;
-            this.AddressLabel.Location = new System.Drawing.Point(9, 133);
-            this.AddressLabel.Name = "AddressLabel";
-            this.AddressLabel.Size = new System.Drawing.Size(50, 13);
-            this.AddressLabel.TabIndex = 12;
-            this.AddressLabel.Text = "Address:";
-            // 
-            // SurnameLabel
-            // 
-            this.SurnameLabel.AutoSize = true;
-            this.SurnameLabel.Location = new System.Drawing.Point(9, 94);
-            this.SurnameLabel.Name = "SurnameLabel";
-            this.SurnameLabel.Size = new System.Drawing.Size(53, 13);
-            this.SurnameLabel.TabIndex = 11;
-            this.SurnameLabel.Text = "Surname:";
-            // 
-            // FirstNameLabel
-            // 
-            this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Location = new System.Drawing.Point(9, 53);
-            this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(62, 13);
-            this.FirstNameLabel.TabIndex = 10;
-            this.FirstNameLabel.Text = "First Name:";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(4, 23);
+            this.label23.Location = new System.Drawing.Point(3, 40);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(168, 13);
             this.label23.TabIndex = 2;
             this.label23.Text = "Fill up the form below to proceed.";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(3, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(66, 23);
-            this.label22.TabIndex = 2;
-            this.label22.Text = "Nope.";
             // 
             // tabPage1
             // 
@@ -834,6 +676,188 @@
             this.AddOrderLabel.Size = new System.Drawing.Size(59, 19);
             this.AddOrderLabel.TabIndex = 2;
             this.AddOrderLabel.Text = "label1";
+            // 
+            // LogInNoButton
+            // 
+            this.LogInNoButton.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogInNoButton.Location = new System.Drawing.Point(3, 1);
+            this.LogInNoButton.Name = "LogInNoButton";
+            this.LogInNoButton.Size = new System.Drawing.Size(75, 36);
+            this.LogInNoButton.TabIndex = 23;
+            this.LogInNoButton.Text = "Nope.";
+            this.LogInNoButton.UseVisualStyleBackColor = true;
+            this.LogInNoButton.Click += new System.EventHandler(this.LogInNoButton_Click);
+            // 
+            // LogInYesButton
+            // 
+            this.LogInYesButton.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogInYesButton.Location = new System.Drawing.Point(3, 1);
+            this.LogInYesButton.Name = "LogInYesButton";
+            this.LogInYesButton.Size = new System.Drawing.Size(75, 36);
+            this.LogInYesButton.TabIndex = 23;
+            this.LogInYesButton.Text = "Yes!";
+            this.LogInYesButton.UseVisualStyleBackColor = true;
+            this.LogInYesButton.Click += new System.EventHandler(this.LogInYesButton_Click);
+            // 
+            // LogInDetailsPanel
+            // 
+            this.LogInDetailsPanel.Controls.Add(this.button8);
+            this.LogInDetailsPanel.Controls.Add(this.textBox6);
+            this.LogInDetailsPanel.Controls.Add(this.textBox5);
+            this.LogInDetailsPanel.Controls.Add(this.label25);
+            this.LogInDetailsPanel.Controls.Add(this.label24);
+            this.LogInDetailsPanel.Enabled = false;
+            this.LogInDetailsPanel.Location = new System.Drawing.Point(2, 56);
+            this.LogInDetailsPanel.Name = "LogInDetailsPanel";
+            this.LogInDetailsPanel.Size = new System.Drawing.Size(197, 311);
+            this.LogInDetailsPanel.TabIndex = 24;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(5, 109);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(149, 45);
+            this.button8.TabIndex = 24;
+            this.button8.Text = "Submit";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox6.Location = new System.Drawing.Point(5, 71);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(149, 21);
+            this.textBox6.TabIndex = 26;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox5.Location = new System.Drawing.Point(5, 30);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(149, 21);
+            this.textBox5.TabIndex = 25;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(2, 54);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(53, 13);
+            this.label25.TabIndex = 23;
+            this.label25.Text = "Surname:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(3, 14);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(52, 13);
+            this.label24.TabIndex = 22;
+            this.label24.Text = "Mobile #:";
+            // 
+            // SignUpDetailsPanel
+            // 
+            this.SignUpDetailsPanel.Controls.Add(this.button6);
+            this.SignUpDetailsPanel.Controls.Add(this.button7);
+            this.SignUpDetailsPanel.Controls.Add(this.textBox4);
+            this.SignUpDetailsPanel.Controls.Add(this.textBox3);
+            this.SignUpDetailsPanel.Controls.Add(this.textBox2);
+            this.SignUpDetailsPanel.Controls.Add(this.textBox1);
+            this.SignUpDetailsPanel.Controls.Add(this.ContactNoLabel);
+            this.SignUpDetailsPanel.Controls.Add(this.AddressLabel);
+            this.SignUpDetailsPanel.Controls.Add(this.SurnameLabel);
+            this.SignUpDetailsPanel.Controls.Add(this.FirstNameLabel);
+            this.SignUpDetailsPanel.Enabled = false;
+            this.SignUpDetailsPanel.Location = new System.Drawing.Point(4, 56);
+            this.SignUpDetailsPanel.Name = "SignUpDetailsPanel";
+            this.SignUpDetailsPanel.Size = new System.Drawing.Size(200, 311);
+            this.SignUpDetailsPanel.TabIndex = 24;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(6, 255);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(149, 23);
+            this.button6.TabIndex = 29;
+            this.button6.Text = "Cancel";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(6, 177);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(149, 45);
+            this.button7.TabIndex = 28;
+            this.button7.Text = "Submit";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox4.Location = new System.Drawing.Point(6, 149);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(149, 21);
+            this.textBox4.TabIndex = 27;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.Location = new System.Drawing.Point(6, 110);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(149, 21);
+            this.textBox3.TabIndex = 26;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Location = new System.Drawing.Point(6, 71);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(149, 21);
+            this.textBox2.TabIndex = 25;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(6, 31);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(149, 21);
+            this.textBox1.TabIndex = 24;
+            // 
+            // ContactNoLabel
+            // 
+            this.ContactNoLabel.AutoSize = true;
+            this.ContactNoLabel.Location = new System.Drawing.Point(3, 133);
+            this.ContactNoLabel.Name = "ContactNoLabel";
+            this.ContactNoLabel.Size = new System.Drawing.Size(52, 13);
+            this.ContactNoLabel.TabIndex = 23;
+            this.ContactNoLabel.Text = "Mobile #:";
+            // 
+            // AddressLabel
+            // 
+            this.AddressLabel.AutoSize = true;
+            this.AddressLabel.Location = new System.Drawing.Point(3, 94);
+            this.AddressLabel.Name = "AddressLabel";
+            this.AddressLabel.Size = new System.Drawing.Size(50, 13);
+            this.AddressLabel.TabIndex = 22;
+            this.AddressLabel.Text = "Address:";
+            // 
+            // SurnameLabel
+            // 
+            this.SurnameLabel.AutoSize = true;
+            this.SurnameLabel.Location = new System.Drawing.Point(3, 55);
+            this.SurnameLabel.Name = "SurnameLabel";
+            this.SurnameLabel.Size = new System.Drawing.Size(53, 13);
+            this.SurnameLabel.TabIndex = 21;
+            this.SurnameLabel.Text = "Surname:";
+            // 
+            // FirstNameLabel
+            // 
+            this.FirstNameLabel.AutoSize = true;
+            this.FirstNameLabel.Location = new System.Drawing.Point(3, 14);
+            this.FirstNameLabel.Name = "FirstNameLabel";
+            this.FirstNameLabel.Size = new System.Drawing.Size(62, 13);
+            this.FirstNameLabel.TabIndex = 20;
+            this.FirstNameLabel.Text = "First Name:";
             // 
             // MainWindow
             // 
@@ -869,6 +893,10 @@
             this.ExistingUserPanel.PerformLayout();
             this.NewUserPanel.ResumeLayout(false);
             this.NewUserPanel.PerformLayout();
+            this.LogInDetailsPanel.ResumeLayout(false);
+            this.LogInDetailsPanel.PerformLayout();
+            this.SignUpDetailsPanel.ResumeLayout(false);
+            this.SignUpDetailsPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -878,7 +906,7 @@
         private System.Windows.Forms.TabControl MainTabControl;
         private System.Windows.Forms.TabPage OrderPage;
         private System.Windows.Forms.TabPage ConfirmPage;
-        private System.Windows.Forms.Label OrderLabel;
+        private System.Windows.Forms.Label OrderHeaderText;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TabPage LogInPage;
         private System.Windows.Forms.Panel panel1;
@@ -899,30 +927,13 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button ConfirmCancelButton;
         private System.Windows.Forms.Button ConfirmNextButton;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label LogInHeaderText;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel ExistingUserPanel;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel NewUserPanel;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label ContactNoLabel;
-        private System.Windows.Forms.Label AddressLabel;
-        private System.Windows.Forms.Label SurnameLabel;
-        private System.Windows.Forms.Label FirstNameLabel;
         private System.Windows.Forms.Button MakeAddButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
@@ -941,6 +952,25 @@
         private System.Windows.Forms.Button LaundryButton;
         private System.Windows.Forms.ListBox ServiceListBox;
         private System.Windows.Forms.Label AddOrderLabel;
+        private System.Windows.Forms.Panel LogInDetailsPanel;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button LogInYesButton;
+        private System.Windows.Forms.Panel SignUpDetailsPanel;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label ContactNoLabel;
+        private System.Windows.Forms.Label AddressLabel;
+        private System.Windows.Forms.Label SurnameLabel;
+        private System.Windows.Forms.Label FirstNameLabel;
+        private System.Windows.Forms.Button LogInNoButton;
     }
 }
 
