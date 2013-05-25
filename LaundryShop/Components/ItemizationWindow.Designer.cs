@@ -29,19 +29,18 @@
         private void InitializeComponent()
         {
             this.ItemizationTable = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ItemizationDoneButton = new System.Windows.Forms.Button();
-            this.ItemizationCancelButton = new System.Windows.Forms.Button();
             this.BrandColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColoredColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.ItemizationDoneButton = new System.Windows.Forms.Button();
+            this.ItemizationCancelButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ItemizationTable)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ItemizationTable
             // 
-            this.ItemizationTable.AllowUserToAddRows = false;
             this.ItemizationTable.AllowUserToDeleteRows = false;
             this.ItemizationTable.AllowUserToResizeRows = false;
             this.ItemizationTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -53,6 +52,21 @@
             this.ItemizationTable.Name = "ItemizationTable";
             this.ItemizationTable.Size = new System.Drawing.Size(446, 225);
             this.ItemizationTable.TabIndex = 0;
+            // 
+            // BrandColumn
+            // 
+            this.BrandColumn.HeaderText = "Brand";
+            this.BrandColumn.Name = "BrandColumn";
+            // 
+            // TypeColumn
+            // 
+            this.TypeColumn.HeaderText = "Type";
+            this.TypeColumn.Name = "TypeColumn";
+            // 
+            // ColoredColumn
+            // 
+            this.ColoredColumn.HeaderText = "Color";
+            this.ColoredColumn.Name = "ColoredColumn";
             // 
             // tableLayoutPanel1
             // 
@@ -71,6 +85,7 @@
             // ItemizationDoneButton
             // 
             this.ItemizationDoneButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemizationDoneButton.AutoEllipsis = true;
             this.ItemizationDoneButton.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemizationDoneButton.Location = new System.Drawing.Point(368, 3);
             this.ItemizationDoneButton.Name = "ItemizationDoneButton";
@@ -90,25 +105,12 @@
             this.ItemizationCancelButton.UseVisualStyleBackColor = true;
             this.ItemizationCancelButton.Click += new System.EventHandler(this.ItemizationCancelButton_Click);
             // 
-            // BrandColumn
-            // 
-            this.BrandColumn.HeaderText = "Brand";
-            this.BrandColumn.Name = "BrandColumn";
-            // 
-            // TypeColumn
-            // 
-            this.TypeColumn.HeaderText = "Type";
-            this.TypeColumn.Name = "TypeColumn";
-            // 
-            // ColoredColumn
-            // 
-            this.ColoredColumn.HeaderText = "Color";
-            this.ColoredColumn.Name = "ColoredColumn";
-            // 
             // ItemizationWindow
             // 
+            this.AcceptButton = this.ItemizationDoneButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.ItemizationCancelButton;
             this.ClientSize = new System.Drawing.Size(491, 308);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.ItemizationTable);

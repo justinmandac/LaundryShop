@@ -13,6 +13,12 @@ namespace LaundryShop.Components
     {
         private ushort quantity;
 
+        public ushort Quantity
+        {
+            get { return quantity; }
+            set { quantity = value; }
+        }
+
         public ItemizationWindow()
         {
             InitializeComponent();
@@ -32,7 +38,22 @@ namespace LaundryShop.Components
 
         private void ItemizationDoneButton_Click(object sender, EventArgs e)
         {
+            ushort _quantity;
+
+            quantity = (ushort)ItemizationTable.Rows.Count;
+            
             this.Close();
+        }
+
+        private bool check()
+        {
+            //check if every row has been filled. 
+            
+            ushort prod;
+
+            
+
+            return true;
         }
     }
 }

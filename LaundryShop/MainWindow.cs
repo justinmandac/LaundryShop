@@ -57,26 +57,45 @@ namespace LaundryShop
 
         private void MakeAddButton_Click(object sender, EventArgs e)
         {
-            
+            bool error = false;
             Order _ord = new Order();
-            _ord.OrderID = ++orderCount;
-            _ord.ServiceType = ServiceListBox.SelectedItem.ToString();
-            _ord.OrderDate = DateTime.Today;
-            _ord.DueDate = DueDateCalendar.SelectionStart;
-            _ord.NoClothes = ushort.Parse(NoClothesTextBox.Text); //error checking
-            _ord.Weight = float.Parse(WeightTextBox.Text); // error checking
-            _ord.Itemized = ItemizeCheckBox.Checked;
-            _ord.Amount = 100; // temporary value
 
+            try
+            {
+                
+                _ord.OrderID = ++orderCount;
+                _ord.ServiceType = ServiceListBox.SelectedItem.ToString();
+                _ord.OrderDate = DateTime.Today;
+                _ord.DueDate = DueDateCalendar.SelectionStart;
+                _ord.NoClothes = ushort.Parse(NoClothesTextBox.Text); 
+                _ord.Weight = float.Parse(WeightTextBox.Text); 
+                _ord.Itemized = ItemizeCheckBox.Checked;
+                _ord.Amount = 100; // temporary value
+
+                //add error checking here.
+
+            }
+            catch (Exception ex)
+            {
+                //add handling for parsing exceptions here (i.e. dialog boxes).
+                error = true;
+                Console.Out.WriteLine(ex.InnerException);
+            }
 
             //initialize a new tab page for the order tab control.
-            
-            OrderTabPage temp = new OrderTabPage("Order # "+_ord.OrderID.ToString(), _ord);
-            
-            OrderListTabControl.Controls.Add(temp);
-            AddOrderLabel.Text = "Order Added to list!";
+            if (!error)
+            {
+                OrderTabPage temp = new OrderTabPage("Order # " + _ord.OrderID.ToString(), _ord);
 
-            ResetOrderFields();
+                OrderListTabControl.Controls.Add(temp);
+                AddOrderLabel.Text = "Order Added to list!";
+
+                ResetOrderFields();
+            }
+            else
+            {
+                AddOrderLabel.Text = "Error!";
+            }
         }
 
         private void ConfirmNextButton_Click(object sender, EventArgs e)
@@ -142,11 +161,15 @@ namespace LaundryShop
             {
                 ushort quant = ushort.Parse(this.NoClothesTextBox.Text);
                 ItemizationWindow temp = new ItemizationWindow(quant);
+                
                 temp.ShowDialog();
+
+                NoClothesTextBox.Text = temp.Quantity.ToString();
+
             }
             catch (Exception ex)
             {
-
+                Console.Out.WriteLine(ex.Message);
             }
          
         }
